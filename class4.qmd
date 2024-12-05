@@ -1,0 +1,321 @@
+---
+title: "Math 162"
+subtitle: "Class 4"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class4_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Natural Logarithm {.smaller}
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="log.html" title="Natural Logarithm"></iframe>
+```
+
+:::
+
+## Natural Logarithm {.smaller}
+
+:::{.columns}
+
+:::{.column width="50%"}
+
+__Definition:__
+
+$$\ln x = \int_1^x \frac{1}{t}\; dt$$
+
+:::
+
+:::{.column width="50%"}
+
+*   Domain: $(0,\infty)$
+
+*   $\ln 1 = 0$
+
+*   $(\ln x)' = \frac{1}{x}$
+
+*   $\ln$ is _continuous_, _increasing_ and _concave down_.
+
+*   $\displaystyle \lim_{x\to\infty} \ln x = \infty$
+
+*   $\displaystyle \lim_{x\to 0^+} \ln x = -\infty$
+
+*   $\ln (xy) = \ln x + \ln y$
+
+*   If $r$ is rational, then $\ln \left(x^r\right) = r\ln x$.
+
+:::
+
+:::
+
+## The Natural Exponential Function {.smaller}
+
+:::{.incremental}
+
+*   $\ln$ is _continuous_ and _increasing_ $\Longrightarrow$ __one-to-one__.
+
+*   It has an _inverse_ function.
+
+*   We will call it the _natural exponential function_, denoted as $\exp()$.
+
+*   Domain of $\exp$ is the range of $\ln$: $(-\infty, \infty)$.
+
+*   Range of $\exp$ is the domain of $\ln$: $(0,\infty)$.
+
+*   $\exp(\ln x) = x$ for any $x \in (0,\infty)$.
+
+*   $\ln \exp(y) = y$ for ant $y \in (-\infty, \infty)$.
+
+*   What is the _derivative_ of $\exp$?
+
+:::
+
+## Derivative of Inverse Functions {.smaller}
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="inverse.html" title="Derivative of inverse function"></iframe>
+```
+
+:::
+
+## Derivative of an Inverse Function {.smaller}
+
+__Theorem:__ If a function $f$ is a one-to-one function with inverse $f^{-1}$, and 
+$y$ is a number such that:
+
+*   $f$ is _differentiable_ at $f^{-1}(y)$ and
+*   $f'\left(f^{-1}\left(y\right)\right) \neq 0$,
+
+then $f^{-1}$ is _differentiable_ at $y$ and
+$$\left(f^{-1}\right)'(y) = \frac{1}{f'\left(f^{-1}\left(y\right)\right)}$$
+
+
+## Example {.smaller}
+
+Let $f(x) = 2x^3 + 3x^2 + 7x + 4$.  Find $\left(f^{-1}\right)'(-2)$.
+
+## Example {.smaller}
+
+Let $f(x) = x^3 + 3\sin x + 2\cos x$.  Find $\left(f^{-1}\right)'(2)$.
+
+
+## The Exponential Function {.smaller}
+
+Let $f(x) = \ln x$. Find $\left(f^{-1}\right)'(y) = \exp'(y)$.
+
+. . .
+
+\begin{align}
+\left(f^{-1}\right)'(y) &= \frac{1}{f'\left(f^{-1}\left(y\right)\right)} \\[.8em]
+&\class{fragment}{{}= \frac{1}{\ln'\left(\exp\left(y\right)\right)}} \\[.8em]
+&\class{fragment}{{}= \frac{1}{\frac{1}{\exp(y)}}} \\[.8em]
+&\class{fragment}{{}= \color{red}{\exp(y)}}
+\end{align}
+
+## Derivative of Exponential Function
+
+The exponential function is _differentiable_ everywhere and
+
+$$\exp'(x) = \exp(x)$$
+
+. . .
+
+Since $\exp'(x) > 0$, the natural exponential function is _increasing_.
+
+. . .
+
+Since $\exp'(x)$ is _increasing_, the natural exponential function is _concave up_.
+
+## The Natural Base {.smaller}
+
+Define $e = \exp(1)$, so that $\ln e = 1$.
+
+::: {.incremental}
+
+*   Suppose $r$ is a _rational number_.  Then for any $x > 0$, $\ln x^r = r\ln x$.
+
+*   Applying the exponential function on both sides: $\exp\left(\ln x^r\right)
+    = \exp\left(r\ln x\right)$.
+
+*   Since $\exp$ and $\ln$ are inverse to each other, they cancel:
+    $\exp\left(\ln x^r\right) = x^r$.
+
+*   This gives us $x^r = \exp\left(r \ln x\right)$.
+
+*   If $x = e$, then $\ln x = 1$, which gives us $\color{red}{e^r = \exp(r)}$.
+
+:::
+
+. . . 
+
+For a _rational number_ $r = \frac{p}{q}$, $\exp(r) = e^r = \sqrt[q]{e^p}$.
+
+## Irrational Powers
+
+If $x$ is an _irrational_ number, we __define__ $e^x$ to be $\exp(x)$.
+
+. . .
+
+Then $\exp(x) = e^x$ for _any real number_ $x$.
+
+. . .
+
+__General powers:__
+
+Suppose $x$ and $y$ are real numbers, and $x > 0$.  __Define__ $x^y = \exp(y\ln x)$.
+
+## Other Properties of $\exp$ {.smaller}
+
+Let $a$ and $b$ be two _real_ numbers.  Let $c = \exp(a)\exp(b)$.
+
+\begin{align}
+\class{fragment}{\ln c}&
+\class{fragment}{{}=\ln\left(\exp(a)\exp(b)\right)} \\[.5em]
+\class{fragment}{\ln c}&
+\class{fragment}{{}=\ln\left(\exp(a)\right) + \ln\left(\exp(b)\right)} \\[.5em]
+\class{fragment}{\ln c}&
+\class{fragment}{{}=a + b} \\[.5em]
+\class{fragment}{c}&
+\class{fragment}{{}=\exp(a + b)} \\[.5em]
+\class{fragment}{\exp(a+b)}&
+\class{fragment}{{}=\exp(a)\exp(b)}
+\end{align}
+
+## Limits {.smaller}
+
+Let $y = \ln x$, or $x = \exp(y)$.
+
+:::{.incremental}
+
+*   $y$ is an _increasing_ function of $x$, and $x$ is an _increasing_ function
+    of $y$.
+
+*   As $x \to \infty$, $y \to \infty$.
+
+*   Therefore, as $y \to \infty$, $x \to \infty$.
+
+*   As $x \to 0^+$, $y \to -\infty$.
+
+*   Therefore, as $y \to -\infty$, $x \to 0^+$.
+
+*   $\displaystyle \lim_{y\to \infty} \exp(y) = \infty$
+
+*   $\displaystyle \lim_{y\to -\infty} \exp(y) = 0$
+
+:::
+
+## Summary {.smaller}
+
+*   Domain of $\exp$ is the range of $\ln$: $(-\infty, \infty)$.
+
+*   Range of $\exp$ is the domain of $\ln$: $(0,\infty)$.
+
+*   $\exp(\ln x) = x$ for any $x \in (0,\infty)$.
+
+*   $\ln \exp(y) = y$ for ant $y \in (-\infty, \infty)$.
+
+*   $\exp'(y) = \exp(y)$
+
+*   $\exp$ is _increasing_ and _concave up_.
+
+*   $\displaystyle \lim_{y\to \infty} \exp(y) = \infty$
+
+*   $\displaystyle \lim_{y\to -\infty} \exp(y) = 0$
+
+*   $\exp(x + y) = \exp(x)\exp(y)$
+
+*   $\exp(-y) = \frac{1}{\exp(y)}$
+
+## Inverse Sine
+
+```{r include=FALSE}
+font_opts <- list(dvisvgm.opts = "--font-format=woff")
+```
+
+:::{.columns}
+
+:::{.column width="60%"}
+
+```{tikz circle, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}[scale=2]
+\draw[thin,<->] (-1.1,0) -- (1.1,0)node[below right]{\tiny$x$};
+\draw[thin,<->] (0,-1.1) -- (0,1.1)node[above left]{\tiny$y$};
+\draw[thin] (0,0) circle[radius=1cm];
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="40%"}
+
+
+:::
+
+:::
+
+## Inverse Tangent {.smaller}
+
+$f(t) = \tan t$, $f^{-1}(z) = \tan^{-1}(z) = \arctan z = \operatorname{atan} z$.
+
+. . .
+
+$\displaystyle \arctan' z = \frac{1}{\tan' \left(\arctan
+z\right)}\class{fragment}{{}= \frac{1}{\sec^2\left(\arctan z\right)}}$
+
+## Derivatives {.smaller}
+
+:::{.incremental}
+
+*   $\displaystyle\ln' x = \frac{1}{x}$
+
+*   $\exp'(x) = \exp(x)$
+
+*   $\displaystyle\arcsin' y = \frac{1}{\sqrt{1 - y^2}}$
+
+*   $\displaystyle\arccos' x = -\frac{1}{\sqrt{1 - x^2}}$
+
+*   $\displaystyle\arctan' z = \frac{1}{1 + z^2}$
+
+*   $\displaystyle\operatorname{arccot}' w = -\frac{1}{1 + w^2}$
+
+:::
+
+## Antiderivatives {.smaller}
+
+:::{.incremental}
+
+*   $\displaystyle \int \frac{1}{x}\;dx = 
+    \begin{cases} \ln(-x) + C_1 & \text{if } x < 0\\ \ln x + C_2 & \text{if } x
+    > 0\end{cases}$
+
+*   $\displaystyle \int \exp(x)\;dx = \exp(x) + C$
+
+*   $\displaystyle \int \frac{1}{\sqrt{1 - y^2}}\;dy = \arcsin y + C_1 = -\arccos y + C_2$
+
+*   $\displaystyle \int \frac{1}{1 + z^2}\;dz = \arctan z + C_1 = -\operatorname{arccot} z + C_2$
+
+:::

@@ -1,0 +1,179 @@
+---
+title: "Math 162"
+subtitle: "Class 1"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class1_wi24.json
+---
+
+## What is a derivative?
+
+
+## What is a _tangent line_?
+
+
+## What is a _tangent line_?
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="tangent_line.html" title="Blah"></iframe>
+```
+
+:::
+
+## Another example
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="tangent_line1.html" title="Blah"></iframe>
+```
+
+:::
+
+## An anti-example
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="no_tangent.html" title="Blah"></iframe>
+```
+
+:::
+
+## The Weierstrass Function
+
+{{< video Weierstrass.mp4 width="800px" height="500px" >}}
+
+## What is a _rate of change_?
+
+```{r include=FALSE}
+font_opts <- list(dvisvgm.opts = "--font-format=woff")
+```
+
+:::{.columns}
+
+:::{.column width="70%"}
+
+
+```{tikz linear_function, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (6,0)node[below right]{$x$};
+\draw[thin,<->] (0,-1) -- (0,5)node[above left]{$y$};
+\draw[blue, very thick] (1,-1) -- (4,5)node[right]{$y = ax + b$};
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="30%"}
+
+:::
+
+:::
+
+## What is a _local_ rate of change?
+
+
+## What is a _scaling factor_?
+
+:::{.columns}
+
+:::{.column width="70%"}
+
+```{tikz linear_function_again, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (6,0)node[below right]{$x$};
+\draw[thin,<->] (0,-1) -- (0,5)node[above left]{$y$};
+\draw[blue, very thick] (1,-1) -- (4,5)node[right]{$y = ax + b$};
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="30%"}
+
+:::
+
+:::
+
+## What is a _scaling factor_?
+
+:::{.columns}
+
+:::{.column width="70%"}
+
+```{tikz axes_only, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (6,0)node[below right]{$x$};
+\draw[thin,<->] (0,-1) -- (0,5)node[above left]{$y$};
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="30%"}
+
+:::
+
+:::
+
+## Derivative rules
+
+## Chain rule
+
+## Product rule
+
+:::{.columns}
+
+:::{.column width="70%"}
+
+```{tikz fg_axes, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (6,0)node[below right]{$f$};
+\draw[thin,<->] (0,-1) -- (0,5)node[above left]{$g$};
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="30%"}
+
+:::
+
+:::
+
+##  What is an integral? {.incremental}
+
+-   Given a _continuous function_ $f$ on an interval $[a,b]$ ...
+
+. . .
+
+Wait, what does _continuous_ mean?
+
+## What is an integral?
+
+## Hydrostatic pressure
+
+## Volume of a solid by slicing
+
+

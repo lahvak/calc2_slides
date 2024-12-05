@@ -1,0 +1,52 @@
+---
+title: "Math 162"
+subtitle: "Class 15"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class15_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Example {.smaller}
+
+$$\int \frac{2 x^{3} + 8 x^2 + 5x}{x^{4} + 3 x^{3} + 2 x^{2} - 2 x - 4}\;dx = 
+\int\frac{1}{x-1}\;dx - \int\frac{1}{x+2}\;dx + \int\frac{2x + 3}{x^2 + 2x + 2}\;dx$$
+
+## Continued {.smaller}
+
+$$\int\frac{1}{x^2 + 2x + 2}\;dx$$
+
+## Example {.smaller}
+
+$$\int \frac{5x + 3}{3x^2 - 2x + 1}\;dx$$
+
+
+## Example {.smaller}
+
+$$\int \frac{1}{\sqrt{-x^2 + 6x - 5}}\;dx$$
+
+. . .
+
+Table gives us:
+
+$$\int \frac{du}{\sqrt{a^2 - u^2}} = \sin^{-1}\frac{u}{a} + C$$
+
+---
+
+$\displaystyle \int x^2\sqrt{x^2 + 4x + 13}\;dx$
+

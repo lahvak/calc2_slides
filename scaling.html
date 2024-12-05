@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jsxgraph.org/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+</head>
+<body style="padding:0; margin:0;">
+<div id="main" style="width:100vw; height:100%; min-height:100vh; border:0; margin:0; padding:0;"></div>
+<script>
+    main = document.getElementById("main");
+    divwidth = main.offsetWidth;
+    divheight = document.body.offsetHeight;
+    contents = "<div id='board' style='width:${divwidth}px; height:${divheight}px; border=0; margin=0;'>" + 
+    "<div style='width:100vw; height:100%; min-height:100vh; border:0; margin:0; padding:0;'></div></div>"
+    main.innerHTML += contents;
+</script>
+<script>
+    JXG.Options.text.useMathJax = true;
+    JXG.Options.text.fontSize = 30;
+    var b = JXG.JSXGraph.initBoard('board', { 
+        boundingbox: [-1, 4.1, 8, -1], 
+        axis: false,
+        showCopyright: false,
+        showNavigation: false,
+        showInfobox: false,
+        keepaspectratio: true,
+        pan: { enabled: false },
+        zoom: { wheel: false },
+        resize: { enabled: true },
+    });
+
+    var myfun = function(x){return 2 - 2*Math.cos(Math.PI*x/3);}
+    var del = .2;
+    var xlinestart = [4,1];
+    var ylinestart = [4,2];
+
+    var realx = function(){return pglide.X() - xlinestart[0];}
+
+    var graph = b.create('functiongraph', [myfun, 0, 3], {strokeWidth:3});
+    var glab = b.create('text', [3.1, myfun(3), "\\(g\\)"], {fixed:true, color:"blue"});
+    var xaxis = b.create('arrow', [[-.1,0],[3,0]], {color:"black", fixed:true});
+    var yaxis = b.create('arrow', [[0,-.1],[0,4.1]], {color:"black", fixed:true});
+    var xlab = b.create('text', [3, -0.1, "\\(x\\)"], {fixed:true});
+    var ylab = b.create('text', [-0.3, 4, "\\(y\\)"], {fixed:true});
+    var xline = b.create('arrow', [xlinestart, [xlinestart[0] + 3, xlinestart[1]]], {color:"black", fixed:true});
+    var yline = b.create('arrow', [ylinestart, [ylinestart[0]+4, ylinestart[1]]], {color:"black", fixed:true});
+    var xlab1 = b.create('text', [xlinestart[0]-.2, xlinestart[1], "\\(x\\)"], {fixed:true});
+    var ylab1 = b.create('text', [ylinestart[0]-.2, ylinestart[1], "\\(y\\)"], {fixed:true});
+    var xlineinv = b.create('segment', [xlinestart, [xlinestart[0]+3-del,xlinestart[1]]], {visible:false, fixed:true});
+    var pglide = b.create('glider', [xlinestart[0]+1, xlinestart[1], xlineinv], {name:""});
+    var segend = b.create('point', [function(){return pglide.X() + del;}, pglide.Y()], {visible:false});
+    var yseg = b.create('point', [function(){return myfun(realx()) + ylinestart[0];}, ylinestart[1]], {visible:false});
+    var ysegend = b.create('point', [function(){return myfun(realx()+del) + ylinestart[0];}, ylinestart[1]], {visible:false});
+    var xstart = b.create('point', [function(){return realx();}, 0], {visible:false});
+    var xend = b.create('point', [function(){return realx() + del;}, 0], {visible:false});
+    var ystart = b.create('point', [0, function(){return myfun(realx());}], {visible:false});
+    var yend = b.create('point', [0, function(){return myfun(realx()+del);}], {visible:false});
+    var curvestart = b.create('point', [function(){return realx();}, function(){return myfun(realx())}], {visible:false});
+    var curveend = b.create('point', [function(){return realx()+del;}, function(){return myfun(realx()+del);}], {visible:false});
+    var int1 = b.create('segment', [pglide, segend], {color:"red", strokeWidth:4});
+    var int2 = b.create('segment', [yseg, ysegend], {color:"red", strokeWidth:4});
+    var intx = b.create('segment', [xstart, xend], {color:"red", strokeWidth:4});
+    var inty = b.create('segment', [ystart, yend], {color:"red", strokeWidth:4});
+    var verststart = b.create('segment', [xstart, curvestart], {color:"red", dash:"2"});
+    var verstend = b.create('segment', [xend, curveend], {color:"red", dash:"2"});
+    var horststart = b.create('segment', [curvestart, ystart], {color:"red", dash:"2"});
+    var horstend = b.create('segment', [curveend, yend], {color:"red", dash:"2"});
+    var arrow1 = b.create('arrow', [pglide, yseg], {color:"red", dash:"2"})
+    var arrow2 = b.create('arrow', [segend, ysegend], {color:"red", dash:"2"})
+    var dxlab = b.create('text', [function(){return pglide.X();}, xlinestart[1]-.2, "\\(dx\\)"], {fixed:true, color:"red"});
+    //var dylab = b.create('text', [function(){return Math.min(myfun(realx())+ylinestart[0], 6);}, ylinestart[1]+.3, "\\(dy=g'(x)\\;dx\\)"], {fixed:true, color:"red"});
+    var dylab = b.create('text', [function(){return myfun(realx())/1.85+ylinestart[0];}, ylinestart[1]+.3, "\\(dy=g'(x)\\;dx\\)"], {fixed:true, color:"red"});
+</script>
+</body>

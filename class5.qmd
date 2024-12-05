@@ -1,0 +1,124 @@
+---
+title: "Math 162"
+subtitle: "Class 5"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class5_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Derivatives {.smaller}
+
+:::{.incremental}
+
+*   $\displaystyle\ln' x = \frac{1}{x}$
+
+*   $\exp'(x) = \exp(x)$
+
+*   $\displaystyle\arcsin' y = \frac{1}{\sqrt{1 - y^2}}$
+
+*   $\displaystyle\arccos' x = -\frac{1}{\sqrt{1 - x^2}}$
+
+*   $\displaystyle\arctan' z = \frac{1}{1 + z^2}$
+
+*   $\displaystyle\operatorname{arccot}' w = -\frac{1}{1 + w^2}$
+
+:::
+
+## Antiderivatives {.smaller}
+
+:::{.incremental}
+
+*   $\displaystyle \int \frac{1}{x}\;dx = 
+    \begin{cases} \ln(-x) + C_1 & \text{if } x < 0\\ \ln x + C_2 & \text{if } x
+    > 0\end{cases}$
+
+*   $\displaystyle \int \exp(x)\;dx = \exp(x) + C$
+
+*   $\displaystyle \int \frac{1}{\sqrt{1 - y^2}}\;dy = \arcsin y + C_1 = -\arccos y + C_2$
+
+*   $\displaystyle \int \frac{1}{1 + z^2}\;dz = \arctan z + C_1 = -\operatorname{arccot} z + C_2$
+
+:::
+
+---
+
+Find $f'(x)$ if $f(x) = \ln \sin(x)$.
+
+---
+
+Find the maxima, minima, inflection points, asymptotes, intervals of increase
+and decrease _etc._ of the function $g(x) = \exp(-x^2)$.
+
+---
+
+Let $f(x) = 2^x$.  Find $f'(x)$.
+
+---
+
+Find $g'(x)$ if $g(x) = \arctan(2x + 1)$.
+
+---
+
+$\displaystyle \int_0^1 \frac{1}{2x + 3}\;dx$
+
+---
+
+$\displaystyle \int_0^1 \frac{x}{x^2 + 4}\;dx$
+
+---
+
+$\displaystyle \int_0^1 \frac{1}{x^2 + 4}\;dx$
+
+---
+
+$\displaystyle \int_3^5 \frac{1}{x^2 - 6x + 13}\;dx$
+
+---
+
+$\displaystyle \int_0^{\pi/4} \tan t\;dt$
+
+---
+
+$\displaystyle \int_0^1 x\exp(-x^2)\;dx$
+
+---
+
+$\displaystyle \int_0^1 \frac{e^x}{e^x + 1}\;dx$
+
+---
+
+$\displaystyle \int_0^1 \frac{e^x + 1}{e^x}\;dx$
+
+## Hyperbolic Functions {.smaller}
+
+:::{.incremental}
+
+*   Hyperbolic cosine: $$\cosh t = \frac{e^t + e^{-t}}{2}$$
+
+*   Hyperbolic sine: $$\sinh t = \frac{e^t - e^{-t}}{2}$$
+
+*   Hyperbolic tangent: $$\tanh t = \frac{\sinh t}{\cosh t} = \frac{e^t - e^{-1}}{e^t + e^{-t}}$$
+
+:::
+
+## Properties
+
+## Derivatives
+
+## Inverse Functions

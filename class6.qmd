@@ -1,0 +1,228 @@
+---
+title: "Math 162"
+subtitle: "Class 6"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class6_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+$\displaystyle \int_0^1 \frac{e^x}{e^x + 1}\;dx$
+
+---
+
+$\displaystyle \int_0^1 \frac{e^x + 1}{e^x}\;dx$
+
+## Hyperbolic Functions {.smaller}
+
+:::{.incremental}
+
+*   Hyperbolic cosine: $$\cosh t = \frac{e^t + e^{-t}}{2}$$
+
+*   Hyperbolic sine: $$\sinh t = \frac{e^t - e^{-t}}{2}$$
+
+*   Hyperbolic tangent: $$\tanh t = \frac{\sinh t}{\cosh t} = \frac{e^t - e^{-1}}{e^t + e^{-t}}$$
+
+:::
+
+## Properties
+
+## Derivatives
+
+## Inverse Functions
+
+## Limits of Fractions {.smaller}
+
+$$\lim_{x\to a} \frac{f(x)}{g(x)}$$
+
+:::{.incremental}
+
+*  $\displaystyle \lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\lim_{x\to a}
+f(x)}{\lim_{x\to a}g(x)}$ __if the limit of $g$ is not zero__.
+
+*  If $\displaystyle \lim_{x \to a}g(x) = 0$ and $\displaystyle\lim_{x\to a}f(x)
+   \neq 0$ then $\displaystyle\lim_{x\to a} \frac{f(x)}{g(x)}$ _does not
+    exist_.
+
+*  The interesting case: $\displaystyle\lim_{x\to a}f(x) = \lim_{x\to a}g(x) =
+   0$
+
+*  Another interesting case: none of the two limits exists.  Much more
+    complicated.
+
+:::
+
+## Type $0/0$ {.smaller}
+
+:::{.incremental}
+
+*   $f(x)$ and $g(x)$ have a __common factor__ which is a power of $x - a$.
+
+    *   $\displaystyle \lim_{x\to 3}\frac{x^2 - 2x - 3}{x^2 - 5x + 6}$
+
+    *   $\displaystyle \lim_{x\to 4}\frac{\sqrt{x} - 2}{x - 4}$
+
+*   Sometimes there is no easy way to factor.
+
+    *   $\displaystyle \lim_{x\to 1}\frac{\ln x}{x^2 - 1}$
+
+    *   $\displaystyle \lim_{x \to 0}\frac{\sin x}{2^x - 1}$
+
+:::
+
+---
+
+$\displaystyle \lim_{x\to 1}\frac{\ln x}{x^2 - 1}$
+
+
+:::{height="75%"}
+```{=html}
+{{< include lHospital1.svg >}}
+```
+:::
+
+---
+
+$\displaystyle \lim_{x \to 0}\frac{\sin x}{2^x - 1}$
+
+:::{height="75%"}
+```{=html}
+{{< include lHospital2.svg >}}
+```
+:::
+
+---
+
+$\displaystyle \lim_{x \to \frac{\pi}{2}}\frac{\cos x}{\frac{x}{\pi} - \frac{1}{2}}$
+
+---
+
+$\displaystyle \lim_{x \to 0}\frac{\cos x - 1}{x^2}$
+
+## l'Hospital's Rule {.smaller}
+
+If $\displaystyle\lim_{x\to a}f(x) = \lim_{x\to a}g(x) = 0$ and if
+$$\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+exists, then
+$$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
+
+. . .
+
+The same rule works if 
+$\displaystyle\lim_{x\to a}f(x)$ and $\displaystyle\lim_{x\to a}g(x)$ are both infinite.
+
+---
+
+$\displaystyle \lim_{x \to \frac{\pi}{2}}\frac{1 - \sin x}{1 + \cos 2x}$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}\frac{
+x^2
+}{
+\exp(x)
+}$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}\frac{
+\ln x
+}{
+\sqrt{x}
+}$
+
+## Indeterminate Forms
+
+*   $\frac{0}{0}$
+
+*   $\frac{\infty}{\infty}$
+
+*   $0\cdot \infty$
+
+*   $\infty - \infty$
+
+*   $0^0$
+
+*   $\infty^0$
+
+*   $1^\infty$
+
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+x
+\ln x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}
+x
+\exp x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+-\infty
+}
+x
+\exp x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+{\frac{\pi}{2}}^-
+}
+\left(\sec x - \tan x\right)
+$
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+x^{\sin x}
+$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}
+x^{1/x}
+$
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+(\cos x)^{1/x^2}
+$
+

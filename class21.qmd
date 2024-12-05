@@ -1,0 +1,126 @@
+---
+title: "Math 162"
+subtitle: "Class 21"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class21_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## "Known" series
+
+::: {.incremental}
+-   Known sums:
+    -   Geometric series
+    -   Telescoping series
+-   Known behavior:
+    -   $p$-series
+:::
+
+## Tests
+
+::: {.incremental}
+-   The $n$-th term test for __divergence__
+-   Series with non-negative terms:
+    -   Integral test
+    -   Comparison test
+    -   Limit comparison test
+:::
+
+## Alternating series
+
+::: {.incremental}
+-   $b_n > 0$ for $n = k, k+1, \dots$
+-   $a_n = (-1)^n b_n$ for $n = k, k+1, \dots$ or $a_n = (-1)^{n+1} b_n$ for $n = k, k+1, \dots$
+-   $\displaystyle \sum_{i=k}^\infty a_n$ is an _alternating_ series.
+:::
+
+## Alternating Series Test
+
+Let $\displaystyle\sum_{i=k}^\infty a_i$ be an _alternating series_ such that
+
+-   $a_n = (-1)^n b_n$ for $n = k, k_1, \dots$ or $a_n = (-1)^{n+1} b_n$ for $n = k, k_1, \dots$
+-   $b_n = \left\lvert a_n\right\rvert$ is __decreasing__
+-   $\displaystyle \lim_{n\to\infty} b_n = 0$
+
+Then $\displaystyle\sum_{i=k}^\infty a_i$ is __convergent__.
+
+## Alternating Harmonic Series
+
+$\displaystyle\sum_{i=1}^\infty (-1)^i\frac{1}{i}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty (-1)^i\frac{i}{i+1}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty (-1)^i\frac{i}{i^2+1}$
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty (-1)^i\frac{1}{\sqrt{i^2+1}}$
+
+## Definition
+
+Let $\displaystyle\sum_{i=k}^\infty a_i$ be a series such that
+the series
+$\displaystyle\sum_{i=k}^\infty \left\lvert a_i\right\rvert$ __converges__.
+
+. . .
+
+Then $\displaystyle\sum_{i=k}^\infty a_i$ converges.
+
+. . .
+
+We say that $\displaystyle\sum_{i=k}^\infty a_i$ __converges absolutely__, or
+that it is __absolutely convergent__.
+
+## Definition
+
+Let $\displaystyle\sum_{i=k}^\infty a_i$ be a _convergent_ series such that
+the series
+$\displaystyle\sum_{i=k}^\infty \left\lvert a_i\right\rvert$ __diverges__.
+
+. . .
+
+We say that $\displaystyle\sum_{i=k}^\infty a_i$ __converges conditionally__, or
+that it is __conditionally convergent__.
+
+## Examples
+
+## What is it about?
+
+Let $\displaystyle\sum_{i=k}^\infty a_i$ be a _convergent_ series with some
+positive and some negative terms.
+
+::: {.incremental}
+-   The series is _absolutely convergent_ if and only if the sum of _positive_ terms and
+    the sum of _negative_ terms are _both_ convergent.
+-   The series is _conditionally convergent_ if and only if the sum of positive terms is
+    $\infty$ and the sum of negative terms is $-\infty$.
+:::
+
+## Rearrangements
+
+

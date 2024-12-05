@@ -1,0 +1,134 @@
+---
+title: "Math 162"
+subtitle: "Class 25"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class25_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Power series for functions {.smaller}
+
+*   $\displaystyle \frac{1}{1-x} = \sum_{n=0}^\infty x^n = 1 + x + x^2 + x^3 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n} = 1 - x^2 + x^4 - x^6 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \frac{1}{(1-x)^2} = \sum_{n=0}^\infty (n+1)x^n = 1 + 2x + 3x^2 + 4x^3 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \ln(1+x) = \sum_{n=1}^\infty (-1)^{n+1} \frac{x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ for $-1 < x \le 1$.
+
+*   $\displaystyle \arctan(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$ for $-1 \le x \le 1$.
+
+. . .
+
+What about other functions?
+
+## Derivatives {.smaller}
+
+Let
+
+$$f(x) = \sum_{n=0}^\infty c_n(x-a)^n$$
+
+on some open interval containing $a$.
+
+. . .
+
+Then
+
+$$c_n = \frac{f^{(n)}(a)}{n!}$$
+
+
+## Uniqueness
+
+Suppose
+
+$$\sum_{n=0}^\infty c_n(x-a)^n 
+= \sum_{n=0}^\infty d_n(x-a)^n$$
+
+for every $x$ from some open interval $I$ containing $a$.  Then $c_n = d_n$ for
+every $n = 0, 1, 2, \dots$.
+
+## Taylor Series
+
+Let $f$ be infinitely differentiable at $a$.  Then the power series
+
+$$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+is called the __Taylor series__ of $f$ centered at $a$.
+
+Taylor series centered at $0$ is also sometimes called _Maclaurin series_.
+
+. . .
+
+__Big question:__ Does the Taylor series of $f$ converge, and if it does, which
+function does it converge to?
+
+## Taylor polynomials {.smaller}
+
+If $f$ has at least $n$ derivatives at $a$, then the polynomial
+
+$$p_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \frac{f'''(a)}{6} +
+\cdots + \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+is called the _$n$-th Taylor polynomial_ of $f$ at $a$.
+
+. . .
+
+If $f$ is _infinitely differentiable_ at $a$ then $p_n(x)$ is the $n$-th
+partial sum of its Taylor series at $a$.
+
+## First Taylor polynomial
+
+## Example {.smaller}
+
+$f(x) = \exp x$ at $a = 0$
+
+
+## Example {.smaller}
+
+$f(x) = \sin x$ at $a = 0$
+
+
+## Example {.smaller}
+
+$f(x) = \sin x$ at $a = \frac{\pi}{4}$
+
+## Example {.smaller}
+
+$f(x) = \ln x$ at $a = 1$
+
+## Taylor's Theorem {.smaller}
+
+Let $f$ has $n+1$ derivatives on an open interval $I$ containing $a$. Define
+
+$$R_n(x) = f(x) - p_n(x)$$
+
+where $p_n$ is the $n$-th Taylor polynomial of $f$ at $a$.
+
+Then for every $x \in I$ there exists a number $c$ _between $a$ and $x$_ such
+that 
+
+$$R_n(x) = \frac{f^{(n+1)}({\color{red} c})}{(n+1)!}(x-a)^{n+1}$$
+
+
+

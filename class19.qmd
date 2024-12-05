@@ -1,0 +1,158 @@
+---
+title: "Math 162"
+subtitle: "Class 19"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class19_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Infinite Series
+
+__Definition:__ Given an infinite sequence $a = (a_n)_{n=k,\dots,\infty}$, we
+define the __infinite series__ associated with $a$ the formal sum
+$$a_k + a_{k+1} + a_{k+2} + \cdots = \sum_{i = k}^\infty a_i$$
+In other words, we place a $+$ sign between each two consecutive terms of the
+sequence.
+
+. . .
+
+__Question:__ Can this be interpreted as an _actual sum_, in other words, can
+we actually __add__ all infinitely many terms of the sequence?
+
+## Example
+
+$\displaystyle a_n = \frac{1}{2^n}$ for $n = 1, 2, dots$.
+
+## Sequence of Partial Sums {.smaller}
+
+Given an infinite series $\displaystyle\sum_{i = k}^\infty a_i = a_k + a_{k+1} + a_{k+2} + \cdots$,
+we define a __sequence of partial sums__ of the series, $s_n$ for $n = k, k+1,
+\dots$ :
+$$s_n = \sum_{i = k}^n a_i = a_k + a_{k+1} + a_{k+2} + \cdots + a_n$$
+
+. . .
+
+If the sequence $s_n$ __converges__, we say that the __series__
+$\displaystyle \sum_{i = k}^\infty a_i$ is _convergent_, and we define
+$$\displaystyle \sum_{i = k}^\infty a_i = \lim_{n\to\infty} s_n$$
+
+. . .
+
+Otherwise, we say that the series _diverges_ or _is divergent_.
+
+## Example
+
+$\displaystyle \sum_{i=1}^\infty\frac{1}{2^i}$
+
+## Index shift {.smaller}
+
+The following series are all the same:
+
+::: {.columns}
+::: {.column width=50%}
+*   $\displaystyle \sum_{i=0}^\infty \frac{2^{n+3}}{n+5}$
+*   $\displaystyle \sum_{i=1}^\infty \frac{2^{n+2}}{n+4}$
+*   $\displaystyle \sum_{i=2}^\infty \frac{2^{n+1}}{n+3}$
+*   $\displaystyle \sum_{i=3}^\infty \frac{2^{n}}{n+2}$
+*   $\displaystyle \sum_{i=4}^\infty \frac{2^{n-1}}{n+1}$
+:::
+::: {.column width=50%}
+*   $\displaystyle \sum_{i=5}^\infty \frac{2^{n-2}}{n}$
+*   $\displaystyle \sum_{i=6}^\infty \frac{2^{n-3}}{n-1}$
+$$\vdots$$
+:::
+:::
+
+## Examples {.smaller}
+
+::: {.incremental}
+-   $\displaystyle \sum_{i=1}^\infty 1$
+-   $\displaystyle \sum_{i=1}^\infty (-1)^i$
+-   $\displaystyle \sum_{i=1}^\infty \frac{i+1}{i}$
+-   $\displaystyle \sum_{i=1}^\infty \frac{i}{i+1}$
+:::
+
+. . .
+
+If $\displaystyle\lim_{n\to\infty} a_n \neq 0$ then
+$\displaystyle\sum_{i=k}^\infty a_i$ __diverges__.
+
+. . .
+
+This is known as _the $n$-th term test for __divergence___.
+
+## Example (the harmonic series) {.smaller}
+
+$\displaystyle \sum_{i = 1}^\infty \frac{1}{n}$
+
+. . .
+
+Trick: Look at the partial sums $s_n$ where $n$ is a _power of 2_:
+
+## Example {.smaller}
+
+$\displaystyle \sum_{i=1}^\infty \frac{1}{i^2 + i}$
+
+## Important example (Geometric series) {.smaller}
+
+$\displaystyle \sum_{i=0}^\infty a\cdot r^i$
+
+## Examples
+
+::: {.incremental}
+-   $\displaystyle\sum_{i=0}^\infty \left(\frac{2}{3}\right)^i$
+-   $\displaystyle\sum_{i=1}^\infty \left(-\frac{2}{3}\right)^i$
+-   $\displaystyle\sum_{i=0}^\infty \left(\frac{3}{2}\right)^i$
+:::
+
+## Algebraic properties {.smaller}
+
+Suppose $\displaystyle\sum_{i=k}^\infty a_i$ and
+$\displaystyle\sum_{i=k}^\infty b_i$ are both convergent.
+
+Then:
+
+::: {.incremental}
+-   $\displaystyle\sum_{i=k}^\infty (a_i + b_i) = \sum_{i=k}^\infty a_i + \sum_{i=k}^\infty b_i$
+-   $\displaystyle\sum_{i=k}^\infty (a_i - b_i) = \sum_{i=k}^\infty a_i - \sum_{i=k}^\infty b_i$
+-   For any real number $c$, $\displaystyle\sum_{i=k}^\infty c\cdot a_i = c\cdot\sum_{i=k}^\infty a_i$
+:::
+
+## Example
+
+$\displaystyle \sum_{i = 1}^\infty \frac{1}{2^i} + \frac{7}{3^{i-1}}$
+
+## Series with _non-negative_ terms {.smaller}
+
+Suppose $a_n \ge 0$ for every $n \ge k$.  Then the sequence of partial sums of
+the series $\displaystyle\sum_{i=k}^\infty a_i$ is __increasing__.
+
+. . .
+
+Then the series $\displaystyle\sum_{i=k}^\infty a_i$ converges if and only if
+the _sequence of its partial sums is __bounded___.
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{1}{2^i + 1}$

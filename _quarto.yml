@@ -1,0 +1,34 @@
+project:
+  type: website
+  title: slides
+  output-dir: _output
+  render:
+    - index.qmd
+    - class1.qmd
+    - class2.qmd
+    - class3.qmd
+    - class4.qmd
+    - class5.qmd
+    - class6.qmd
+    - class7.qmd
+    - class8.qmd
+    - class10.qmd
+    - class11.qmd
+    - class12.qmd
+    - class13.qmd
+    - class14.qmd
+    - class15.qmd
+    - class16.qmd
+    - class17.qmd
+    - class18.qmd
+    - class19.qmd
+    - class20.qmd
+    - class21.qmd
+    - class22.qmd
+    - class23.qmd
+    - class24.qmd
+    - class25.qmd
+    - class26.qmd
+
+execute:
+  cache: true

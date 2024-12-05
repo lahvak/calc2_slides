@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\tikzset{
+  svgfrag/.style 2 args={
+    execute at begin scope={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end scope={\special{dvisvgm:raw </g>}},
+    execute at begin node={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end node={\special{dvisvgm:raw </g>}},
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.3]
+    \draw[white] (-1.3,-2.3) rectangle (6.3,2.3);
+    \draw[thin, ->] (-1,0) -- (6,0)node[below right]{$x$};
+    \draw[thin, ->] (0, -2) -- (0, 2)node[above left]{$y$};
+    \draw[thick, domain=0.135:6, blue] plot[samples=200] (\x, {ln \x})node[below]{$\ln x$};
+    \draw[thick, domain=-1:1.732, blue] plot[samples=200] (\x, {\x*\x - 1})node[left]{$x^2 - 1$};
+    \begin{scope}[svgfrag={1}{fade-in}]
+        \draw[thick] (-1,-2) -- (3,2);
+    \end{scope}
+    \begin{scope}[svgfrag={2}{fade-in}]
+        \node[above right] at (3,2) {$y = x - 1$};
+    \end{scope}
+    \begin{scope}[svgfrag={3}{fade-in}]
+        \draw[thick] (0,-2) -- (2,2);
+    \end{scope}
+    \begin{scope}[svgfrag={4}{fade-in}]
+        \node[above] at (2,2) {$y = 2(x - 1)$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

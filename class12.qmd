@@ -1,0 +1,77 @@
+---
+title: "Math 162"
+subtitle: "Class 12"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class12_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Pythagorean Identities
+
+\begin{align*}
+1 - \cos^2 t &= \sin^2 t\\
+1 - \sin^2 t &= \cos^2 t\\
+1 + \tan^2 t &= \sec^2 t\\
+\sec^2 t - 1 &= \tan^2 t
+\end{align*}
+
+---
+
+$\displaystyle \int x^2\sqrt{x^2 + 9}\;dx$
+
+---
+
+$\displaystyle \int \frac{1}{\sqrt{x^2 - 9}}\;dx$
+
+---
+
+$\displaystyle \int \frac{1}{x^2}\sqrt{7 - x^2}\;dx$
+
+---
+
+If $x = \sqrt{3}\cos t$, express each of the following in terms of
+    $x$:
+
+:::{.incremental}
+1.  $\sin t$
+
+2.  $\sin 2t$
+
+3.  $\tan t$
+:::
+
+---
+
+If $x = 5\tan t$, express each of the following in terms of $x$:
+
+:::{.incremental}
+1.  $\sin t$
+
+2.  $\sec t$
+:::
+
+
+---
+
+$\displaystyle \int \frac{1}{\sqrt{x^2 - 9}}\;dx$
+
+## Another way
+
+$\displaystyle \int x^2\sqrt{x^2 + 9}\;dx$
+

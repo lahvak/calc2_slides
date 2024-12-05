@@ -1,0 +1,104 @@
+---
+title: "Math 162"
+subtitle: "Class 26"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class26_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Power series for functions {.smaller}
+
+*   $\displaystyle \frac{1}{1-x} = \sum_{n=0}^\infty x^n = 1 + x + x^2 + x^3 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n} = 1 - x^2 + x^4 - x^6 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \frac{1}{(1-x)^2} = \sum_{n=0}^\infty (n+1)x^n = 1 + 2x + 3x^2 + 4x^3 + \cdots$ for $-1 < x < 1$.
+
+*   $\displaystyle \ln(1+x) = \sum_{n=1}^\infty (-1)^{n+1} \frac{x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ for $-1 < x \le 1$.
+
+*   $\displaystyle \arctan(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$ for $-1 \le x \le 1$.
+
+## Taylor (Maclaurin) series {.smaller}
+
+*   $\displaystyle \exp(x) = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$ for any $x$.
+
+*   $\displaystyle \sin(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots$ for any $x$.
+
+*   $\displaystyle \cos(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!} = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots$ for any $x$.
+
+. . .
+
+$$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+## Taylor's Theorem {.smaller}
+
+Let $f$ has $n+1$ derivatives on an open interval $I$ containing $a$. Then
+
+$$f(x) = \sum_{i=0}^n \frac{f^{(i)}(a)}{i!}(x-a)^i + R_n(x)$$
+
+and for every $x \in I$ there exists a number $c$ _between $a$ and $x$_ such
+that 
+
+$$R_n(x) = \frac{f^{(n+1)}({\color{red} c})}{(n+1)!}(x-a)^{n+1}$$
+
+. . .
+
+$\displaystyle\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n = f(x)$
+if and only if $\displaystyle\lim_{n\to\infty}R_n(x) = 0$.
+
+## Another example:
+
+Expand $(1+x)^n$
+
+## Pascal's triangle
+
+## Using Maclaurin series
+
+$f(x) = (1 + x)^r$
+
+## Radius of convergence
+
+## Example
+
+$\sqrt{1+x}$
+
+## Example
+
+Find a function $f$ such that $f'(x) = f(x)$.
+
+## Example
+
+Find $\displaystyle \int \exp\left(-x^2\right)\;dx$
+
+## Example
+
+Find $\displaystyle\lim_{x\to 0}\frac{\sin x}{x}$
+
+## Example
+
+Find $\displaystyle\lim_{x\to 0}\frac{\cos x - 1}{x^2}$
+
+## Example
+
+$\exp (ix) = {}$

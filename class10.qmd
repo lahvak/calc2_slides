@@ -1,0 +1,101 @@
+---
+title: "Math 162"
+subtitle: "Class 10"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class10_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Summary {.smaller}
+
+$$\int \cos^m x \sin^n x\;dx$$
+
+*   If $m$ is __odd__, split $\cos^m x$ as $\cos^{m-1} x\cos x$ and substitute
+    $u = \sin x$.
+
+*   If $n$ is __odd__, split $\sin^m x$ as $\sin^{m-1} x\sin x$ and substitute
+    $u = \cos x$.
+
+*   If both $m$ and $n$ are __even__, use _power reduction_ formulas.
+
+## {.smaller .scrollable}
+
+$$\begin{aligned}
+\int_0^{\pi/2} \sin^3 x\cos^{11}x\;dx
+&\class{fragment}{{}=\int_0^{\pi/2} \sin^3 x\cos^{10}x\cos x\;dx} \\\\
+&\class{fragment}{{}=\int_0^{\pi/2} \sin^3 x\left(\cos^{2}x\right)^5\cos x\;dx} \\\\
+&\class{fragment}{{}=\int_0^{\pi/2} \sin^3 x\left(1-\sin^{2}x\right)^5\cos x\;dx} \\\\
+&\class{fragment}{\color{blue}u = \sin x, \qquad du = \cos x\;dx} \\\\
+&\class{fragment}{{}=\int_0^1 u^3\left(1-u^{2}\right)^5\;du} \\\\
+&\class{fragment}{{}=\int_0^1 u^2\left(1-u^{2}\right)^5u\;du} \\\\
+&\class{fragment}{\color{green}t = 1 - u^2, \qquad dt = -2u\;du, \qquad u^2 = 1 - t} \\\\
+&\class{fragment}{{}=-\frac{1}{2}\int_1^0 (1-t)t^5\;dt} \\\\
+&\class{fragment}{{}=\frac{1}{2}\int_0^1 t^5 - t^6\;dt} \\\\
+&\class{fragment}{{}=\frac{1}{2}\left.\left(\frac{t^6}{6} -
+\frac{t^7}{7}\right)\right\rvert_0^1 = \frac{1}{12} - \frac{1}{14}}
+\end{aligned}$$
+
+
+## {.smaller}
+
+$$\begin{aligned}
+\int_0^{\pi/2} \sin^2 x\cos^{6}x\;dx
+&\class{fragment}{{}=\int_0^{\pi/2} \sin^2 x\left(\cos^{2}x\right)^3\;dx} \\\\
+&\class{fragment}{{}=\int_0^{\pi/2} \frac{1 - \cos(2x)}{2} \left(\frac{1+\cos(2x)}{2}\right)^3\;dx} \\\\
+&\class{fragment}{{}=\int_0^{\pi/2} \frac{1 - \cos(2x)}{2} \frac{1+\cos(2x)}{2}\left(\frac{1+\cos(2x)}{2}\right)^2\;dx} \\\\
+&\class{fragment}{{}=\int_0^{\pi/2} \frac{1 - \cos^2(2x)}{4}\frac{1+2\cos(2x)+\cos^2(2x)}{4}\;dx} \\\\
+&\class{fragment}{{}=\frac{1}{16}\int_0^{\pi/2} \sin^2(2x)\left(1+2\cos(2x)+\cos^2(2x)\right)\;dx}
+\end{aligned}$$
+
+## {.smaller}
+
+$$\int_0^{\pi/2} \sin^2(2x)\left(1+2\cos(2x)+\cos^2(2x)\right)\;dx$$
+
+
+
+---
+
+*   $\displaystyle \int\sec^2 x\;dx$
+*   $\displaystyle \int\sec x\tan x\;dx$
+*   $\displaystyle \int\tan x\;dx$
+
+---
+
+*   $\displaystyle \int\sec x\;dx$
+
+
+---
+
+*   $\displaystyle \int\sec^6 x\tan x\;dx$
+
+
+---
+
+*   $\displaystyle \int\sec^6 x\tan^3 x\;dx$
+
+
+---
+
+*   $\displaystyle \int\sec^3 x\;dx$
+
+
+---
+
+*   $\displaystyle \int\tan^3 x\;dx$
+

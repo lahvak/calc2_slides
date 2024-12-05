@@ -1,0 +1,231 @@
+---
+title: "Math 162"
+subtitle: "Class 23"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class23_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Sequences of Functions
+
+*   Infinite sequence of functions $f_i$, $i = k, k+1, \dots$
+*   All defined on a common domain $D$.
+
+::: {.incremental}
+*   For each $x \in D$ we get a sequence $f_i(x)$, $i = k, k+1, \dots$
+*   Is this sequence _convergent_?
+*   If it is, what is the $\displaystyle\lim_{i\to\infty} f_i(x)$?
+*   Let $E$ be the set of all $x\in D$ such that $\displaystyle\lim_{i\to\infty} f_i(x)$ exists.
+:::
+
+## Limit of Sequence
+
+*   Let $E$ be the set of all $x\in D$ such that $\displaystyle\lim_{i\to\infty} f_i(x)$ exists.
+*   Define a function $f$ with domain $E$: $$f(x) = \lim_{i\to\infty} f_i(x)$$
+*   We say that the function $f$ is the limit of the sequence $(f_i)_{i = k, k+1,
+    \dots}$, or that the sequence $(f_i)$ converges to $f$ on the set $E$.
+
+## Example
+
+:::{height="75%"}
+```{=html}
+{{< include functionseq.svg >}}
+```
+:::
+
+## Example
+
+$f_i(x) = x^i$ for $i = 1, 2, \dots$
+
+. . .
+
+*   If $-1 < x < 1$, $\displaystyle\lim_{i\to\infty}f_i(x) = 0$.
+*   If $x = 1$, $\displaystyle\lim_{i\to\infty}f_i(x) = 1$.
+*   If $x \le -1$ or $1 < x$, $\displaystyle\lim_{i\to\infty}f_i(x)$ does not exist.
+
+. . .
+
+$$f(x) = \begin{cases} 0 & \text{ if $-1 < x < 1$}\\1 & \text{ if $x =
+1$}\end{cases}$$
+
+. . .
+
+The sequence $(f_i)$ converges to $f$ on $(-1,1]$.
+
+## Another Example
+
+:::{height="75%"}
+```{=html}
+{{< include functionseq1.svg >}}
+```
+:::
+
+## Another Example
+
+$f_i(x) = e^{-ix^2}$ for $i = 1, 2, \dots$
+
+. . .
+
+*   If $x \neq 0$, $\displaystyle\lim_{i\to\infty}f_i(x) = 0$.
+*   If $x = 0$, $\displaystyle\lim_{i\to\infty}f_i(x) = 1$.
+
+. . .
+
+$$f(x) = \begin{cases} 0 & \text{ if $x \neq 0$}\\1 & \text{ if $x = 0$}\end{cases}$$
+
+. . .
+
+The sequence $(f_i)$ converges to $f$ on $(-\infty, \infty)$.
+
+## What can we say about $f$?
+
+Not much!
+
+. . . 
+
+Does not have to be continuous.
+
+. . .
+
+Does not have to be differentiable.
+
+. . .
+
+__Sometimes__ we can say more.
+
+## Uniform Convergence
+
+__Definition:__ We say that a sequence of functions $(f_i)$ converges to a
+function $f$ __uniformly__ on a set $K$ if _for each $\varepsilon > 0$ there
+exists an integer $N$ such that for each $x \in K$,_ $$\left\lvert f_i(x) -
+f(x)\right\rvert < \varepsilon \text{ if } i \ge N$$.
+
+. . .
+
+Note that the integer $N$ depends only on the sequence $(f_i)$ and $\varepsilon$, __not on $x$__!
+
+## Some Facts {.smaller}
+
+::: {.incremental}
+-   If each $f_i$ is _continuous_ on $K$ and the sequence $(f_i)$ converges to
+    $f$ _uniformly_ on $K$, then $f$ is _continuous_.
+-   If each $f_i$ is _differentiable_ on $K$ with derivative $f'_i$, the sequence $(f_i)$ converges to
+    a function $f$ on $K$, and the sequence $(f'_i)$ converges to a function
+    $g$ __uniformly__ on $K$, then $f$ is _differentiable_ on $K$, and $f'(x) =
+    g(x)$ for every $x \in K$.
+-   If each $f_i$ is _Riemann integrable_ on an interval $K=[a,b]$ and the sequence $(f_i)$ converges to
+    $f$ _uniformly_ on $K$, then $f$ is _Riemann integrable_ on $K$, and
+    $$\int_a^b f(x)\;dx = \lim_{i\to\infty}\int_a^b f_i(x)\;dx$$
+:::
+
+## Infinite Series {.smaller}
+
+Given an infinite sequence of functions $f_i$, $i = k, k+1, \dots$, we define
+an _infinite series_ of the functions $f_i$ to be the sum $$\sum_{i=k}^\infty f_i(x).$$
+
+. . .
+
+The sequence of _partial sums_ $(s_n)$, $n = k, k+1, \dots$ is the sequence of
+functions defined as $$s_n(x) = \sum_{i = k}^n f_i(x).$$
+
+. . .
+
+If the sequence $(s_n)$ _converges_ to a function $s$ on a set $E$, we say that
+the function $s$ is the __sum__ of the series,
+and we say that the series is __convergent__ on the set $E$.
+
+. . .
+
+$$\sum_{i=k}^\infty f_i(x) = s(x)$$
+
+## Example {.smaller}
+
+::: {.incremental}
+-   $f_i(x) = x^i$ for $i = 0, 1, \dots$
+-   The series is $$\sum_{i=0}^\infty x^i$$
+-   This is a _geometric series_, convergent if $\left\lvert x\right\rvert < 1$.
+-   The sum is $$\frac{1}{1-x}$$
+-   $$\sum_{i=0}^\infty x^i = \frac{1}{1-x} \text{ for } -1 < x < 1$$
+:::
+
+## Example
+
+:::{height="75%"}
+```{=html}
+{{< include funcseries.svg >}}
+```
+:::
+
+## Power Series
+
+Let $c_n$ for $n = 0, 1, 2, \dots$ be a sequence of numbers, and $a$ a number.
+The series of functions
+$$\sum_{i=0}^\infty c_n(x-a)^n = c_0 + c_1(x - a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$
+is called a __power series__ _centered_ at $a$.
+
+When $a = 0$ we just get
+$$\sum_{i=0}^\infty c_nx^n = c_0 + c_1x + c_2x^2 + c_3x^3 + \cdots$$
+
+## Example
+
+$\displaystyle\sum_{n=0}^\infty n!(x-3)^n$
+
+## Example
+
+$\displaystyle\sum_{n=0}^\infty n(x-3)^n$
+
+## Example
+
+$\displaystyle\sum_{n=1}^\infty (-1)^n\frac{x^n}{n}$
+
+## Example
+
+$\displaystyle\sum_{n=0}^\infty \frac{(x+5)^n}{2^n}$
+
+## Convergence of Power Series {.smaller}
+
+Given the power series
+$$\sum_{i=0}^\infty c_n(x-a)^n = c_0 + c_1(x - a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$
+exactly one of the following will happen:
+
+1.   The series converges at $a$ only.
+2.   The series converges on $(-\infty, \infty)$
+3.   There is a positive number $R$ such that the series converges on an
+     interval with end-points $a - R$ and $a + R$, and diverges outside of that
+     interval.
+
+. . .
+
+The number $R$ is called the __radius of convergence__ of the series.
+
+## Convergence of Power Series {.smaller}
+
+Let
+$$\sum_{i=0}^\infty c_n(x-a)^n = c_0 + c_1(x - a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$
+be a power series with a __positive__ (possibly infinite) radius of convergence
+$R$. Then
+
+*   The series converges _absolutely_ on $(a - R, a+R)$.
+*   For any positive $r < R$, the series converges __uniformly__ on $[a - r, a + r]$
+

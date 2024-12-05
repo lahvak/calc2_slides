@@ -1,0 +1,94 @@
+---
+title: "Math 162"
+subtitle: "Class 14"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class14_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Partial Fractions {.smaller}
+
+:::{.incremental}
+
+*  If there is $(ax + b)^k$ factor in the denominator, the corresponding partial fractions are
+
+    $$\frac{A_1}{ax + b} + \frac{A_2}{(ax + b)^2} + \frac{A_3}{(ax+b)^3} + \cdots +
+    \frac{A_k}{(ax+b)^k}$$
+
+*  If there is an __irreducible__ $(ax^2 + b)^k$ factor in the denominator, the corresponding partial fractions are
+
+    $$\frac{B_1x + C_1}{ax + b} + \frac{B_2 x + C_2}{(ax + b)^2} + \frac{B_3 x + C_3}{(ax+b)^3} + \cdots +
+    \frac{B_k x + C_k}{(ax+b)^k}$$
+
+:::
+
+---
+
+$\displaystyle \frac{x^2 + 2x+1}{(x+1)^3(x^2+2)^2}$
+
+
+## Rational Zeros Theorem {.smaller}
+
+If a polynomial
+
+$$a_nx^n + a_{n-1}x^{n-1} + \cdots + a_2x^2 + a_1 x + a_0$$
+
+has a _rational_ zero $r = \frac{p}{q}$ (simplified)
+
+then $p$ is a factor of $a_0$ and $q$ is a factor of $a_n$.
+
+$$6 x^{5} + 5 x^{4} - 35 x^{3} - 15 x^{2} + 29 x + 10$$
+
+## Factoring {.}
+
+Using __Synthetic division__ (a.k.a nested evaluation a.k.a. H\"orner's
+algorithm)
+
+$$6 x^{5} + 5 x^{4} - 35 x^{3} - 15 x^{2} + 29 x + 10$$
+
+---
+
+Factor the polynomial $2x^4 - 7x^3 - 18x^2 + 13x + 10$.
+
+---
+
+Write this rational function as a sum of rational functions with prime
+denominators:
+$$\frac{x^3 + 3x^2 - 2x + 1}{2x^4 - 7x^3 - 18x^2 + 13x + 10}$$
+
+---
+
+Factor the polynomial $3x^4 - x^3 - 9x^2 + 9x - 2$.
+
+---
+
+$\displaystyle \int\frac{3 x^{3} + 15 x^{2} - 11 x + 5}{3 x^{4} - x^{3} - 9 x^{2} + 9 x - 2}\;dx$
+
+---
+
+$\displaystyle \int \frac{3x + 1}{x^2 + 2}\;dx$
+
+---
+
+Factor the polynomial $x^4 + 3x^3 + 2x^2 - 2x - 4$.
+
+---
+
+$\displaystyle \int \frac{2 x^{3} + 8 x^2 + 5x}{x^{4} + 3 x^{3} + 2 x^{2} - 2 x - 4}\;dx$
+

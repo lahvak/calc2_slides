@@ -1,0 +1,50 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{intervalarrows}
+
+\tikzset{
+  svgfrag/.style 2 args={
+    execute at begin scope={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end scope={\special{dvisvgm:raw </g>}},
+    execute at begin node={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end node={\special{dvisvgm:raw </g>}},
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}[scale=2.3]
+    \draw[white] (-3,-2.1) rectangle (3,2.1);
+    \draw[thin, ->] (-2.5,0) -- (2.5,0)node[below right]{$x$};
+    \draw[thin, ->] (0, -2) -- (0, 2)node[above left]{$y$};
+    \begin{scope}[svgfrag={1}{fade-in-then-out}]
+        \clip (-2.5,-2) rectangle (2.5, 2);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {(\x)});
+        \node at (-.5, 1.5) {$f_1(x) = x$};
+    \end{scope}
+    \begin{scope}[svgfrag={2}{fade-in-then-out}]
+        \clip (-2.5,-2) rectangle (2.5, 2);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {(\x)^2});
+        \node at (-.5, 1.5) {$f_2(x) = x^2$};
+    \end{scope}
+    \begin{scope}[svgfrag={3}{fade-in-then-out}]
+        \clip (-2.5,-2) rectangle (2.5, 2);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {(\x)^3});
+        \node at (-.5, 1.5) {$f_3(x) = x^3$};
+    \end{scope}
+    \foreach \i in {4,...,20}{
+        \begin{scope}[svgfrag={\i}{fade-in-then-out}]
+            \clip (-2.5,-2) rectangle (2.5, 2);
+            \pgfmathsetmacro{\limit}{2^(1/(\i))+.01}
+            \draw[thick, domain=-\limit:\limit] plot[samples=200] (\x, {(\x)^(\i)});
+            \node at (-.5, 1.5) {$f_{\i}(x) = x^{\i}$};
+        \end{scope}
+    }
+    \begin{scope}[svgfrag={21}{fade-in}]
+        \clip (-2.5,-2) rectangle (2.5, 2);
+        \draw[thick, open-open] (-1,0) -- (1,0);
+        \draw[fill] (1,1) circle[radius=1pt];
+        \node at (-.5, 1.5) {$f(x)$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

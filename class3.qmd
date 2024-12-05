@@ -1,0 +1,122 @@
+---
+title: "Math 162"
+subtitle: "Class 3"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+---
+
+## We will study this function:
+
+$$f(x) = \int_1^x \frac{1}{t}\;dt$$
+
+What are its properties?
+
+## Properties {.smaller}
+
+*   Domain:
+
+*   Derivative:
+
+
+
+---
+
+::: {.r-stretch}
+
+```{=html}
+{{< include log_symmetry.svg >}}
+```
+
+:::
+
+## Limit at $\infty$ {.smaller}
+
+:::{height="50%"}
+```{=html}
+{{< include log_limit.svg >}}
+```
+:::
+
+:::{.columns}
+
+:::{.column width="50%"}
+
+:::{.fragment fragment-index=1}
+$f(2) > 1\cdot \frac{1}{2} = \frac{1}{2}$
+:::
+
+:::{.fragment fragment-index=2}
+$f(4) > \frac{1}{2} + 2\cdot \frac{1}{4} = \frac{2}{2}$
+:::
+
+:::{.fragment fragment-index=3}
+$f(8) > \frac{2}{2} + 4\cdot \frac{1}{8} = \frac{3}{2}$
+:::
+
+:::{.fragment fragment-index=4}
+$f(16) > \frac{3}{2} + 8\cdot \frac{1}{16} = \frac{4}{2}$
+:::
+
+:::{.fragment fragment-index=5}
+$f\left(2^n\right) > \frac{1}{2} + \frac{1}{2} + \cdots + \frac{1}{2} = \frac{n}{2}$
+:::
+
+:::
+
+:::{.column width="50%"}
+
+:::{.fragment fragment-index=6}
+Also, $f$ is _increasing_, so if $x > 2^n$, $f(x) > \frac{n}{2}$
+:::
+
+:::{.fragment fragment-index=7}
+Therefore
+$$ \lim_{x\to\infty} f(x) = \infty$$
+:::
+
+:::
+
+:::
+
+## The Range
+
+## Another interesting property {.smaller}
+
+:::{height="15%"}
+```{=html}
+{{< include log_mult.svg >}}
+```
+:::
+
+$\displaystyle f(xy) = \int_1^{xy} \frac{1}{t}\;dt$ [$\displaystyle {} =
+\int_1^x \frac{1}{t}\;dt + \int_x^{xy} \frac{1}{t}\;dt$]{.fragment
+fragment-index=1}
+
+## A similar property {.smaller}
+
+If $r$ is a rational number, what is $f\left(x^r\right)$?
+
+## Properties {.smaller}
+
+*   Domain: $(0,\infty)$
+
+*   $f(1) = 0$
+
+*   $f'(x) = \frac{1}{x}$
+
+*   $f$ is _increasing_.
+
+*   $\displaystyle \lim_{x\to\infty} f(x) = \infty$
+
+*   $\displaystyle \lim_{x\to 0} f(x) = -\infty$
+
+*   $f(xy) = f(x) + f(y)$
+
+*   If $r$ is rational, then $f\left(x^r\right) = rf(x)$.
+
+. . .
+
+This function already has a name: the _natural logarithm_!
+

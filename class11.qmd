@@ -1,0 +1,162 @@
+---
+title: "Math 162"
+subtitle: "Class 11"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class11_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Derivatives!
+
+:::{.incremental}
+
+*   Derivatives, derivatives, derivatives!
+
+*   Derivatives!
+
+*   Chain rule, product rule!
+
+:::
+
+## Integrals
+
+:::{.incremental}
+
+*   Do not mix variables in substitution!
+
+*   _Always_ update the limits!
+
+*   Do not drop $dx$!
+
+*   Do not _force_ a substitution!  If it does not fit, it does not work!
+
+*   $\displaystyle \color{red} \int f(x)g(x)\;dx \neq \int f(x)\;dx \int g(x)\;dx$!!!!!
+
+:::
+
+## Limits
+
+:::{.incremental}
+
+*   Do not drop the $\displaystyle\lim_{x\to a}$!
+
+*   Especially when you do a substitution and the $a$ changes!
+
+*   $\infty\cdot 0 \neq 0$!  Sometimes it is, but not always!
+
+*   $0^0 \neq 1$!  Sometimes it is, but not always!
+
+*   Do not try to "calculate" with infinities! $\infty$ and $-\infty$ are not
+    numbers, and the rules for working with them are complicated. It is easy to
+    make a mistake. There is a reason why limits are used.
+
+*   If it is not type $\frac{0}{0}$ or type $\frac{\infty}{\infty}$, do not try
+    to use l'Hospital's rule!
+
+:::
+
+## The deal {.smaller}
+
+*   You can re-do any problem on which you did not get full credit.
+
+*   The corrections are due __next Thursday__, 2/29, in class.
+
+*   Turn in the corrections __and the original exam__!
+
+*   Do __not__ write the corrections on the original exam! Use separate sheets
+    of paper.  Write down the problem number clearly, so I can see which
+    problem you are doing.
+
+*   The solutions must be written in clear, organized, and __mathematically
+    correct__ way.  Use proper notation and terminology. It is a take-home
+    assignment, so you have time to write everything down carefully.
+
+*   I will grade the corrections, and _average the new score with the old one_.
+    The resulting score will be capped at 100.
+
+## Leftover from last time {.smaller}
+
+\begin{align*}
+\int \sec^3 x\;dx &\class{fragment}{{}= \int\sec^2 x\sec x\;dx}\\
+& \class{fragment}{\color{blue}\qquad u = \sec x\qquad\qquad\qquad dv = \sec^2x\;dx}\\
+& \class{fragment}{\color{blue}\qquad du = \sec x \tan x\;dx\qquad v = \tan x}\\
+&\class{fragment}{{}=\sec x\tan x - \int\tan^2 x \sec x\;dx}\class{fragment}{{}= \sec x\tan x - \int\left(\sec^2 x - 1\right)\sec x\;dx}\\[1.2em]
+&\class{fragment}{{}=\sec x\tan x + \int\sec x\;dx - \int\sec^3 x\;dx}\\[1.2em]
+&\class{fragment}{{}= \sec x\tan x + \ln\left\lvert \sec x + \tan x\right\rvert - \int \sec^3 x\;dx}
+\end{align*}
+
+
+## Few more trigonometric integrals {.smaller}
+
+$\displaystyle \int_0^{\pi/2} \cos(3x)\sin(5x)\;dx$
+
+. . .
+
+__Product to sum__ formulas:
+
+\begin{align*}
+    \sin u \cos v &= \frac{1}{2}\left[ \sin(u+v) + \sin(u-v) \right]\\
+    \cos u \sin v &= \frac{1}{2}\left[ \sin(u+v) - \sin(u-v) \right]\\
+    \cos u \cos v &= \frac{1}{2}\left[ \cos(u+v) + \cos(u-v) \right]\\
+    \sin u \sin v &= \frac{1}{2}\left[ \cos(u-v) - \cos(u+v) \right]\\
+\end{align*}
+
+---
+
+$\displaystyle \int_{-\pi}^{\pi} \cos(mx)\sin(nx)\;dx$, $m$ and $n$ non-negative integers.
+
+. . .
+
+$\cos u \sin v = \frac{1}{2}\left[ \sin(u+v) - \sin(u-v) \right]$
+
+---
+
+$\displaystyle \int_{-\pi}^{\pi} \cos(mx)\cos(nx)\;dx$, $m$ and $n$ non-negative integers.
+
+. . .
+
+$\cos u \cos v = \frac{1}{2}\left[ \cos(u+v) + \cos(u-v) \right]$
+
+
+## Trigonometric Substitutions
+
+$\displaystyle \int_0^{1/2} \sqrt{1 - x^2}\;dx$
+
+---
+
+$\displaystyle \int \frac{\sqrt{9 - x^2}}{x}\;dx$
+
+## Pythagorean Identities
+
+\begin{align*}
+1 - \cos^2 t &= \sin^2 t\\
+1 - \sin^2 t &= \cos^2 t\\
+1 + \tan^2 t &= \sec^2 t\\
+\sec^2 t - 1 &= \tan^2 t
+\end{align*}
+
+---
+
+$\displaystyle \int \sqrt{4 + x^2}\;dx$
+
+
+---
+
+$\displaystyle \int \frac{1}{\sqrt{x^2 - 16}}\;dx$
+

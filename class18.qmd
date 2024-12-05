@@ -1,0 +1,187 @@
+---
+title: "Math 162"
+subtitle: "Class 18"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class18_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Increasing and Decreasing Sequences
+
+::: {.incremental}
+-   A sequence $a_n$ is _increasing_ if $a_{n+1} \ge a_n$ for all $n$.
+-   A sequence $a_n$ is _strictly increasing_ if $a_{n+1} > a_n$ for all $n$.
+-   A sequence $a_n$ is _decreasing_ if $a_{n+1} \le a_n$ for all $n$.
+-   A sequence $a_n$ is _strictly decreasing_ if $a_{n+1} < a_n$ for all $n$.
+-   A sequence $a_n$ is _eventually increasing_, or _increasing for all $n \ge n_0$_, if $a_{n+1} \ge a_n$ for all $n \ge n_0$.
+-   A sequence $a_n$ is _eventually decreasing_, or _decreasing for all $n \ge n_0$_, if $a_{n+1} \le a_n$ for all $n \ge n_0$.
+:::
+
+## Monotone Sequences
+
+::: {.incremental}
+-   A sequence is called _monotone_ if it is either _increasing_ or _decreasing_.
+-   A sequence is called _strictly monotone_ if it is either _strictly increasing_ or _strictly decreasing_.
+-   A sequence is called _eventually monotone_ if it is either _eventually increasing_ or _eventually decreasing_.
+:::
+
+## Examples
+
+::: {.incremental}
+-   $a_n = \frac{n}{n+1}$
+-   $b_n = \frac{1}{n}$
+-   $c_0 = 1$ and $c_n = c_{n-1} + \frac{1}{n}$ for $n > 0$
+-   $d_n = (-1)^n$
+-   $e_n = \cos n$
+-   $f_n = n^2$
+-   $d_n = (-2)^n$
+:::
+
+## Bounded sequences
+
+::: {.incremental}
+-   A sequence $a_n$ is _bounded from above_ by $B$ if $a_n \le B$ for each $n$.
+-   A sequence $a_n$ is _bounded from below_ by $b$ if $a_n \ge b$ for each $n$.
+-   A sequence is __bounded__ if it is _bounded from below_ and _bounded from above_.
+:::
+
+
+## Examples
+
+::: {.incremental}
+-   $a_n = \frac{n}{n+1}$
+-   $b_n = \frac{1}{n}$
+-   $c_0 = 1$ and $c_n = c_{n-1} + \frac{1}{n}$ for $n > 0$
+-   $d_n = (-1)^n$
+-   $e_n = \cos n$
+-   $f_n = n^2$
+-   $d_n = (-2)^n$
+:::
+
+## An Example
+
+$a_0 = 3$ and $\displaystyle a_n = 3 - \frac{2}{a_{n-1}}$ for $n > 0$.
+
+## Limits of Sequences
+
+__Definition:__ We way that an infinite sequence $a_n$ has a _limit_ $L$, or
+_converges to_ $L$, if for every $\varepsilon > 0$ there exists an integer $N$
+such that $\left\lvert a_n - L\right\rvert < \varepsilon$ for each $n \ge N$.
+
+Notation: $\displaystyle \lim_{n\to\infty} a_n = L$
+
+. . .
+
+If a sequence has a limit, we say that it is _convergent_.
+
+. . .
+
+Otherwise, we say that it is _divergent_.
+
+## Calculating Limits
+
+::: {.incremental}
+-   Limit laws
+-   If $a_n = f(n)$ and $\displaystyle \lim_{x\to\infty} f(x) = L$ then
+    $\displaystyle \lim_{n\to\infty} a_n = L$.
+    -  Note that the converse is __not true__!
+-   If $b_n = f\left(a_n\right)$ and $\displaystyle \lim{n\to\infty} a_n = A$
+    and $f$ is _continuous_ at $A$, then $\displaystyle\lim_{n\to\infty} b_n =
+    f(A)$.
+-   _Squeeze Theorem_
+:::
+
+## Examples {.smaller}
+
+::: {.incremental}
+-   $\displaystyle a_n = \frac{1}{n}$
+-   $\displaystyle b_n = \frac{n+1}{n}$
+-   $\displaystyle c_n = \frac{n^2}{e^n}$
+-   $\displaystyle d_n = \cos\left(\frac{1}{n}\right)$
+-   $\displaystyle e_n = \frac{1}{n!}$
+-   $\displaystyle f_n = \frac{n!}{n^n}$
+:::
+
+## Estimates
+
+If $a_n$ and $b_n$ are _convergent_ sequences, then:
+
+-   If $a_n \le b_n$ for each $n$, then $\displaystyle\lim_{n\to\infty} a_n \le
+    \lim_{n\to\infty} b_n$.
+
+-   If $a_n < b_n$ for each $n$, then $\displaystyle\lim_{n\to\infty} a_n \le
+    \lim_{n\to\infty} b_n$.
+
+-   It is still true if the inequality only holds for every $n \ge n_0$ for some
+    integer $n_0$.
+
+-   If a _convergent_ sequence $a_n$ is _bounded_ with a lower bound $b$ and an
+    upper bound $B$, then $\displaystyle b \le \lim_{n\to\infty} a_n \le B$.
+
+## A Theorem
+
+::: {.incremental}
+-   Every convergent sequence is __bounded__.
+-   A _bounded_ sequence does not have to be convergent!
+-   Every _bounded_ and _monotonic_ or _eventually monotonic_ sequence is convergent.
+:::
+
+
+## An Example
+
+$a_0 = 3$ and $\displaystyle a_n = 3 - \frac{2}{a_{n-1}}$ for $n > 0$.
+
+## Infinite Series
+
+__Definition:__ Given an infinite sequence $a = (a_n)_{n=k,\dots,\infty}$, we
+define the __infinite series__ associated with $a$ the formal sum
+$$a_k + a_{k+1} + a_{k+2} + \cdots = \sum_{i = k}^\infty a_i$$
+In other words, we place a $+$ sign between each two consecutive terms of the
+sequence.
+
+. . .
+
+__Question:__ Can this be interpreted as an _actual sum_, in other words, can
+we actually __add__ all infinitely many terms of the sequence?
+
+## Example
+
+$\displaystyle a_n = \frac{1}{2^n}$ for $n = 1, 2, dots$.
+
+## Sequence of Partial Sums {.smaller}
+
+Given an infinite series $\displaystyle\sum_{i = k}^\infty a_i = a_k + a_{k+1} + a_{k+2} + \cdots$,
+we define a __sequence of partial sums__ of the series, $s_n$ for $n = k, k+1,
+\dots$ :
+$$s_n = \sum_{i = k}^n a_i = a_k + a_{k+1} + a_{k+2} + \cdots + a_n$$
+
+. . .
+
+If the sequence $s_n$ __converges__, we say that the __series__
+$\displaystyle \sum_{i = k}^\infty a_i$ is _convergent_, and we define
+$$\displaystyle \sum_{i = k}^\infty a_i = \lim_{n\to\infty} s_n$$
+
+. . .
+
+Otherwise, we say that the series _diverges_ or _is divergent_.
+
+## Example
+
+$\displaystyle \sum_{i=1}^\infty\frac{1}{2^i}$
+

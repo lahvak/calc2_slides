@@ -1,0 +1,193 @@
+---
+title: "Math 162"
+subtitle: "Class 20"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class20_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Geometric Series
+
+$$\sum_{i=0}^\infty ar^i$$
+
+. . .
+
+Converges to $\displaystyle\frac{a}{1-r}$ if $\left\lvert r\right\rvert < 1$.
+
+. . .
+
+Diverges if $\left\lvert r\right\rvert \ge 1$
+
+## Telescoping Series
+
+$$\sum_{i=k}^\infty \left(b_i - b_{i+1}\right)$$
+
+. . .
+
+$s_n = b_k - b_{n+1}$
+
+. . .
+
+Converges to $b_k - \displaystyle\lim_{n\to\infty} b_n$ if this limit exists.
+
+. . .
+
+A discrete version of the FTC!
+
+## Example
+
+$\displaystyle \sum_{i = 1}^\infty \frac{(i+1)\sin(i) - i\sin(i+1)}{i(i+1)}$
+
+## Harmonic Series
+
+$$\sum_{i = 1}^\infty \frac{1}{i}$$
+
+__divergent__
+
+. . . 
+
+$\displaystyle s_{2^n} > \frac{n}{2}$
+
+## The $n$-th term test for _divergence_
+
+If the $$\lim_{n\to\infty} a_n$$ is _not_ 0, then the series
+$$\sum_{i=k}^\infty a_i$$
+diverges.
+
+## Dropping terms
+
+Let $N > k$ are two integers.  Then $\displaystyle \sum_{i=k}^\infty a_i$ converges
+if and only if $\displaystyle\sum_{i=N}^\infty a_i$ converges.
+
+. . .
+
+Proof: Let $s_n$, $n = k, k+1, \dots$ be the sequence of partial sums of the
+series $\displaystyle \sum_{i=k}^\infty a_i$, and let $r_n$, $n=N, N+1, \dots$
+be the sequence of partial sums of the series $\displaystyle \sum_{i=N}^\infty a_i$.
+
+Then $s_n = r_n + s_{N-1}$ for every $n \ge N$.
+
+## Series with non-negative terms
+
+If $a_i \ge 0$ for every $i = k, k+1, \dots$, we can visualize the series as an
+__area__:
+
+{{< include series_area.svg >}}
+
+## Comparison test
+
+If $0 \le a_n \le b_n$ for each $n \ge k$ and if
+$\displaystyle\sum_{i=k}^\infty b_i$ converges, then 
+$\displaystyle\sum_{i=k}^\infty a_i$ also converges.
+
+. . .
+
+If $a_n \ge b_n \ge 0$ for each $n \ge k$ and if
+$\displaystyle\sum_{i=k}^\infty b_i$ diverges, then 
+$\displaystyle\sum_{i=k}^\infty a_i$ also diverges.
+
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{1}{3^i + 5}$
+
+## Example
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i-1}$
+
+## Comparing to other areas
+
+Suppose $a_n = f(n)$ for $n = k, k+1, \dots$, where $f$ is a __decreasing__ and
+__continuous__ function.
+
+{{< include series_integral.svg >}}
+
+## Integral Test
+
+Suppose $a_n = f(n)$ for $n = k, k+1, \dots$, where $f$ is a __decreasing__ and
+__continuous__ function.
+
+::: {.incremental}
+-   If $\displaystyle\int_{k-1}^\infty f(x)\;dx$ __converges__, then so does $\displaystyle \sum_{i=k}^\infty a_i$.
+
+-   If $\displaystyle\int_{k}^\infty f(x)\;dx$ __diverges__, then so does $\displaystyle \sum_{i=k}^\infty a_i$.
+:::
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{1}{i^2 + 1}$
+
+## Example
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i\ln i}$
+
+## Example ($p$-series)
+
+$\displaystyle\sum_{i=1}^\infty \frac{1}{i^p}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty \frac{1}{i^2 + 1}$
+
+## Example
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i^2 - 1}$
+
+## Example
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i - 1}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty \frac{1}{i + 1}$
+
+## Limit Comparison Test
+
+Suppose $a_n \ge 0$ and $b_n \ge 0$ for all $n \ge k$.
+
+::: {.incremental}
+-   If $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n} = L > 0$ then the series
+    $\displaystyle\sum_{i=k}^\infty a_i$ and
+    $\displaystyle\sum_{i=k}^\infty b_i$ either __both converge__ or __both
+    diverge__.
+-   If $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n} = 0$ and the series
+    $\displaystyle\sum_{i=k}^\infty b_i$ __converges__, then
+    $\displaystyle\sum_{i=k}^\infty a_i$ also __converges__.
+-   If $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n} = \infty$ and the series
+    $\displaystyle\sum_{i=k}^\infty b_i$ __diverges__, then
+    $\displaystyle\sum_{i=k}^\infty a_i$ also __diverges__.
+:::
+
+## Example
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i^2 - 1}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty \frac{1}{i + 1}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty \frac{i}{i^2 + 1}$
+

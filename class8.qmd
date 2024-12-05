@@ -1,0 +1,70 @@
+---
+title: "Math 162"
+subtitle: "Class 8"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+$\displaystyle \int_1^2 x^2\exp(2x)\;dx$
+
+---
+
+$\displaystyle \int \ln(x^2)\;dx$
+
+---
+
+$\displaystyle \int_1^{\exp(\pi)} \cos(2\ln x)\;dx$
+
+## Important Trigonometric Formulas
+
+*   Pythagorean Identities
+
+    *   $\cos^2 t + \sin^2 t = 1$
+    *   $1 + \tan^2 t = \sec^2 t$
+    *   $\cot^2 t + 1 = \csc^2 t$
+
+*   Power reduction identities:
+
+    *   $\displaystyle \cos^2 t = \frac{1 + \cos(2t)}{2}$
+    *   $\displaystyle \sin^2 t = \frac{1 - \cos(2t)}{2}$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \sin(x)\cos(x)\;dx$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \sin^2(x)\cos(x)\;dx$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \sin^2(x)\cos^3(x)\;dx$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \cos^2(x)\;dx$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \cos^4(x)\sin^5(x)\;dx$
+
+---
+
+$\displaystyle\int_0^{\pi/2} \cos^2(x)\sin^4(x)\;dx$
+

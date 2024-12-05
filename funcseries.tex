@@ -1,0 +1,50 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{intervalarrows}
+
+\tikzset{
+  svgfrag/.style 2 args={
+    execute at begin scope={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end scope={\special{dvisvgm:raw </g>}},
+    execute at begin node={\special{dvisvgm:raw <g class="fragment #2" data-fragment-index="#1">}},
+    execute at end node={\special{dvisvgm:raw </g>}},
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}[scale=2.3]
+    \draw[white] (-3,-1.1) rectangle (3,3.1);
+    \draw[thin, ->] (-2.5,0) -- (2.5,0)node[below right]{$x$};
+    \draw[thin, ->] (0, -1) -- (0, 3)node[above left]{$y$};
+    \begin{scope}[svgfrag={1}{fade-in-then-out}]
+        \clip (-2.5,-1) rectangle (2.5, 3);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {1});
+        \node at (-1, 1.5) {$s_0(x) = 1$};
+    \end{scope}
+    \begin{scope}[svgfrag={2}{fade-in-then-out}]
+        \clip (-2.5,-1) rectangle (2.5, 3);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {1+\x});
+        \node at (-1, 1.5) {$s_1(x) = 1+x$};
+    \end{scope}
+    \begin{scope}[svgfrag={3}{fade-in-then-out}]
+        \clip (-2.5,-1) rectangle (2.5, 3);
+        \draw[thick, domain=-2.5:2.5] plot[samples=200] (\x, {1+\x+(\x)^2});
+        \node at (-1, 1.5) {$s_2(x) = 1+x+x^2$};
+    \end{scope}
+    \foreach \i in {3,...,19}{
+        \pgfmathsetmacro{\j}{\i+1}
+        \begin{scope}[svgfrag={\j}{fade-in-then-out}]
+            \clip (-2.5,-1) rectangle (2.5, 3);
+            \pgfmathsetmacro{\limit}{5^(1/(\i))+.01}
+            \draw[thick, domain=-\limit:\limit] plot[samples=200] (\x, {(1 - (\x)^(\i+1))/(1 - (\x))});
+            \node at (-1, 1.5) {$s_{\i}(x) = 1 + x + \cdots + x^{\i}$};
+        \end{scope}
+    }
+    \begin{scope}[svgfrag={21}{fade-in}]
+        \clip (-2.5,-1) rectangle (2.5, 3);
+        \draw[thick, domain=-1:0.6666, open->] plot[samples=200] (\x, {(1)/(1 - (\x))});
+        \node at (-1, 1.5) {$s(x) = 1 + x + \cdots = \frac{1}{1-x}$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

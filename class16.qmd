@@ -1,0 +1,74 @@
+---
+title: "Math 162"
+subtitle: "Class 16"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class16_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+Calculate $\displaystyle \int_{-2}^1 \frac{1}{x^2}\;dx$
+
+---
+
+Define $\displaystyle f(x) = \int_x^1 \frac{1}{\sqrt[3]{t}}\;dt$.
+
+---
+
+Define $\displaystyle f(x) = \int_x^1 \frac{1}{t^2}\;dt$.
+
+---
+
+Define $\displaystyle f(x) = \int_1^x \frac{1}{t^2}\;dt$.
+
+---
+
+Define $\displaystyle f(x) = \int_1^x \frac{1}{\sqrt[3]{t}}\;dt$.
+
+## Improper Integrals
+
+
+## Example {.smaller}
+
+$$\int_0^1 \frac{1}{\sqrt{1-x}}\;dx$$
+
+
+## Example {.smaller}
+
+$$\int_2^\infty e^{-x}\;dx$$
+
+## Example {.smaller}
+
+$$\int_{-\infty}^0 \frac{1}{1+x^2}\;dx$$
+
+## P-integrals {.smaller}
+
+$$\int_0^1 \frac{1}{x^p}\;dx$$
+
+## P-integrals {.smaller}
+
+$$\int_1^\infty \frac{1}{x^p}\;dx$$
+
+## Comparison Theorem
+
+Does $\displaystyle \int_1^\infty \frac{1}{xe^x}\;dx$ converge?
+
+## Comparison Theorem
+
+Does $\displaystyle \int_e^\infty \frac{\ln x}{x}\;dx$ converge?
+

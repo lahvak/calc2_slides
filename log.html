@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jsxgraph.org/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+</head>
+<body style="padding:0; margin:0;">
+<div id="main" style="width:100vw; height:100%; min-height:100vh; border:0; margin:0; padding:0;"></div>
+<script>
+    main = document.getElementById("main");
+    divwidth = main.offsetWidth;
+    divheight = document.body.offsetHeight;
+    contents = "<div id='board' style='width:${divwidth}px; height:${divheight}px; border=0; margin=0;'>" + 
+    "<div style='width:100vw; height:100%; min-height:100vh; border:0; margin:0; padding:0;'></div></div>"
+    main.innerHTML += contents;
+</script>
+<script>
+    JXG.Options.text.useMathJax = true;
+    JXG.Options.text.fontSize = 30;
+    var b = JXG.JSXGraph.initBoard('board', {
+        boundingbox: [-1, 6, 6, -1],
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        showInfobox: false,
+        keepaspectratio: true,
+        pan: {
+            enabled: true
+        },
+        zoom: {
+            wheel: true
+        },
+        resize: {
+            enabled: true
+        },
+    });
+
+    var graph = b.create('functiongraph',
+        [function(x) {
+            return 1 / x;
+        }]);
+
+    var posx = b.create('line', [
+        [0, 0],
+        [6, 0]
+    ], {
+        straightFirst: false,
+        visible: false
+    });
+    var xval = b.create('glider', [4, 0, posx], {
+        name: "\\(x\\)",
+        label: {
+            offset: [-10, -20]
+        }
+    });
+
+    var integral = b.create('integral', [
+        [1, function() {
+            return xval.X();
+        }],
+        graph
+    ], {
+        color: function() {
+            return xval.X() < 1 ? "red" : "blue";
+        },
+        label: {
+            visible: false
+        },
+        baseLeft: {
+            fixed: true,
+            visible: false
+        },
+        curveLeft: {
+            fixed: true,
+            visible: false
+        }
+    });
+
+    var text = b.create('text', [1, 5, function() {
+        return "\\(\\ln x = " + integral.Value() + "\\)";
+    }], {
+        fixed: true
+    });
+
+    var dotrace = b.create('checkbox', [1, 4, "Trace"], {
+        fixed: true
+    });
+
+    var tracer = b.create('point', [function() {
+            return xval.X();
+        },
+        function() {
+            return integral.Value();
+        }
+    ], {
+        trace: function() {
+            return dotrace.Value();
+        },
+        name: "\\((x,\\ln x)\\)"
+    });
+
+</script>
+</body>

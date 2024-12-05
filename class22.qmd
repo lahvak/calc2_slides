@@ -1,0 +1,102 @@
+---
+title: "Math 162"
+subtitle: "Class 22"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class22_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Ratio Test
+
+Suppose $\displaystyle\sum_{i=k}^\infty a_i$ be a series with _nonzero_ terms
+such that
+
+$$\displaystyle \rho = \lim_{n\to\infty} \left\lvert
+\frac{a_{n+1}}{a_n}\right\rvert$$
+
+exists or is infinite.
+
+::: {.incremental}
+-   If $0 \le \rho < 1$, the series __converges absolutely__.
+-   If $\rho > 1$ (including infinity), the series __diverges__.
+-   If $\rho = 1$, there is __no conclusion__.
+:::
+
+
+## Root Test
+
+Suppose $\displaystyle\sum_{i=k}^\infty a_i$ be a series
+such that
+
+$$\displaystyle \rho = \lim_{n\to\infty} \sqrt[n]{\left\lvert
+a_n\right\rvert}$$
+
+exists or is infinite.
+
+::: {.incremental}
+-   If $0 \le \rho < 1$, the series __converges absolutely__.
+-   If $\rho > 1$ (including infinity), the series __diverges__.
+-   If $\rho = 1$, there is __no conclusion__.
+:::
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{(i+1)2^i}{i!}$
+
+## Example
+
+$\displaystyle\sum_{i=1}^\infty \frac{(-1)^i}{i2^i}$
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{i^2}{i!}$
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{i^i}{i!}$
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{3}{i^2 + 1}$
+
+## Example
+
+$\displaystyle\sum_{i=0}^\infty \frac{i+1}{i^i}$
+
+## Challenge
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i(\ln i)^3}$
+
+## Challenge
+
+$\displaystyle\sum_{i=2}^\infty \frac{1}{i^3\ln i}$
+
+## Challenge
+
+$\displaystyle\sum_{i=0}^\infty \frac{(-1)^i(i+1)}{5^i}$
+
+## Challenge
+
+$\displaystyle\sum_{i=0}^\infty \frac{(-1)^i}{5i + 3}$
+

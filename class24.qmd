@@ -1,0 +1,139 @@
+---
+title: "Math 162"
+subtitle: "Class 24"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class24_wi24.json
+        html-math-method: 
+            method: mathjax
+            url: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml-nofont.js'
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-bonum'
+                },
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+## Convergence of Power Series {.smaller}
+
+Given the power series
+$$\sum_{i=0}^\infty c_n(x-a)^n = c_0 + c_1(x - a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$
+exactly one of the following will happen:
+
+1.   The series converges at $a$ only.
+2.   The series converges on $(-\infty, \infty)$
+3.   There is a positive number $R$ such that the series converges on an
+     interval with end-points $a - R$ and $a + R$, and diverges outside of that
+     interval.
+
+. . .
+
+The number $R$ is called the __radius of convergence__ of the series.
+
+## Convergence of Power Series {.smaller}
+
+Let
+$$\sum_{i=0}^\infty c_n(x-a)^n = c_0 + c_1(x - a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$
+be a power series with a __positive__ (possibly infinite) radius of convergence
+$R$. Then
+
+*   The series converges _absolutely_ on $(a - R, a+R)$.
+*   For any positive $r < R$, the series converges __uniformly__ on $[a - r, a + r]$
+
+## Adding Power Series {.smaller}
+
+Given two power series, $\displaystyle\sum_{n=0}^\infty c_n(x-a)^n$ which
+converges to $f$, and $\displaystyle\sum_{n=0}^\infty d_n(x-a)^n$ converging to
+$g$, with radii of convergence $R_1$ and $R_2$, the series
+$$\displaystyle\sum_{n=0}^\infty (c_n + d_n)(x-a)^n$$
+has a radius of convergence at least the __smaller__ of $R_1$ and $R_2$, and
+converges to $f + g$.
+
+## Multiplying by $b(x-a)^m$ {.smaller}
+
+Let $\displaystyle\sum_{n=0}^\infty c_n(x-a)^n$ be a power series converging on
+an interval $I$ to the function $f$.
+
+Then the power series $\displaystyle\sum_{n=0}^\infty bc_n(x-a)^{n+m}$
+converges to $b(x-a)^mf(x)$ on $I$.
+
+## Substituting {.smaller}
+
+Let $\displaystyle\sum_{n=0}^\infty c_nx^n$ be a power series converging on
+an interval $I$ to the function $f$.
+
+Then the power series $\displaystyle\sum_{n=0}^\infty c_nb^nx^{mn}$
+converges to $f(bx^m)$ for any $x$ such that $bx^m \in I$.
+
+## Example {.smaller}
+
+Find a power series for $f(x) = \dfrac{1}{x^2 - 3x + 2}$.
+
+## Example {.smaller}
+
+Find a power series for $g(x) = \dfrac{x}{x^2 + 1}$
+
+## Exercise {.smaller}
+
+Find _all_ derivatives of the polynomial
+
+$$P(x) = 2x^5 - x^4 + 3x^3 + x^2 - 6x + 31$$
+
+## Derivative of Power Series {.smaller}
+
+Let $\displaystyle\sum_{n=0}^\infty c_n(x-a)^n$ be a power series converging to
+a function $f$ with a radius of convergence $R>0$.
+
+Then the series $\displaystyle\sum_{n=1}^\infty nc_n(x-a)^{n-1}$ converges to
+$f'$ with the same radius of convergence $R$.
+
+. . .
+
+Every power series centered at $a$ with radius of convergence $R>0$ is
+__differentiable__ on $(a - R, a+R)$, and the derivative is again a _power
+series_ centered at $a$ with radius of convergence $R$.
+
+. . .
+
+It is __infinitely differentiable__ on $(a - R, a + R)$.
+
+## Example {.smaller}
+
+We know that $\displaystyle \frac{1}{1-x} = \sum_{n = 0}^\infty x^n$
+
+## Exercise {.smaller}
+
+Find the antiderivative of the polynomial
+ 
+$$P(x) = 2x^5 - x^4 + 3x^3 + x^2 - 6x + 31$$
+
+## Integration of Power Series {.smaller}
+
+Let $\displaystyle\sum_{n=0}^\infty c_n(x-a)^n$ be a power series converging to
+a function $f$ with a radius of convergence $R>0$.
+
+Then the antiderivative of $f$  on $(a-R,a+R)$ is
+$$\int f(x)\;dx = C + \sum_{n=0}^\infty\frac{c_n}{n+1}(x-a)^{n+1}$$
+
+. . .
+
+With an index shift, that can be written as
+$$\int f(x)\;dx = C + \sum_{n=1}^\infty\frac{c_{n-1}}{n}(x-a)^{n}$$
+
+## Example {.smaller}
+
+Start with the series with sum $\displaystyle \frac{1}{1+x^2}$
+

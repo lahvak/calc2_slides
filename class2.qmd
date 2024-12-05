@@ -1,0 +1,106 @@
+---
+title: "Math 162"
+subtitle: "Class 2"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class2_wi24.json
+---
+
+## What is the rage of change of the area function?
+
+```{r include=FALSE}
+font_opts <- list(dvisvgm.opts = "--font-format=woff")
+```
+
+:::{.columns}
+
+:::{.column width="70%"}
+
+
+```{tikz area, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (7,0)node[below right]{$x$};
+\draw[blue, very thick] (0,3) .. controls (2,4) .. (4,2) .. controls (5,1) .. (6,1)node[right]{$f(x)$};
+\draw[thin] (0,0)node[below]{$a$} -- (0,3);
+\draw[thin] (4,0)node[below]{$x$} -- (4,2);
+\end{tikzpicture}
+```
+
+:::
+
+:::{.column width="30%"}
+$$g(x) = \int_a^x f(t)\;dt$$
+
+:::
+
+:::
+
+## The Fundamental Theorem of Calculus Part 1:
+
+If $f$ is _continuous_ on $[a,b]$  then for every $c$ in $[a,b]$ the function
+
+$$g(x) = \int_c^x f(t)\;dt$$
+
+is _defined_ on $[a,b]$ and _differentiable_ on $(a,b)$, with
+
+$$g'(x) = f(x)$$
+
+for every $x$ in $(a,b)$.
+
+## What if we accumulate changes?
+
+$$\int_a^b f'(x) \; dx$$
+
+## The Fundamental Theorem of Calculus Part 2:
+
+If $f$ is continuous on $[a,b]$ and has _continuous derivative_ on $( a,b )$  then
+
+$$\int_a^b f'(x)\;dx = f(b) - f(a)$$
+
+. . .
+
+Integrating the rate of change gives us the total change.
+
+
+## Derivative as scaling factor again
+
+::: {.r-stretch}
+
+```{=html}
+<iframe width="100%" height="100%" src="scaling.html" title="Blah"></iframe>
+```
+
+:::
+
+## Substitution theorem
+
+```{tikz sub, engine.opts=font_opts}
+#| echo: false
+#| fig-align: center
+#| fig-ext: svg
+#| out-width: 100%
+\begin{tikzpicture}
+\draw[thin,<->] (-1,0) -- (7,0)node[below right]{$u$};
+\draw[blue, very thick] (0,3) .. controls (2,4) .. (4,2) .. controls (5,1) .. (6,1)node[right]{$f(x)$};
+\draw[thin] (0,0)node[below]{$g(a)$} -- (0,3);
+\draw[thin] (4,0)node[below]{$g(b)$} -- (4,2);
+\node (integral) at (5,3) {$\displaystyle\int_{g(a)}^{g(b)} f(u)\;du$};
+\draw[thin,<->] (-1,-1) -- (7,-1)node[below right]{$x$};
+\draw[thin] (.3,-.95) -- (.3,-1.05)node[below]{$a$};
+\draw[thin] (5.5,-.95) -- (5.5,-1.05)node[below]{$b$};
+\draw[thin] (2.5,-.95) -- (2.5,-1.05)node[below]{$x$};
+\draw[thin] (1.5,.05) -- (1.5,-0.05)node[below]{$u=g(x)$};
+\draw[red,dotted,shorten >=0.05cm, shorten <=0.05cm,->] (.3,-.95) -- (0,-0.05);
+\draw[red,dotted,shorten >=0.05cm, shorten <=0.05cm,->] (2.5,-.95) -- (1.5,-0.05);
+\draw[red,dotted,shorten >=0.05cm, shorten <=0.05cm,->] (5.5,-.95) -- (4,-0.05);
+\end{tikzpicture}
+```
+
+## Examples
+

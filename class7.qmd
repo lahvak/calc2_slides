@@ -1,0 +1,184 @@
+---
+title: "Math 162"
+subtitle: "Class 7"
+format: 
+    revealjs:
+        chalkboard:
+            theme: whiteboard
+            src: 162_class7_wi24.json
+        html-math-method: mathjax
+        include-in-header:
+          - text: |
+              <script>
+              MathJax = {
+                options: {
+                  menuOptions: {
+                    settings: {
+                      assistiveMml: false
+                    }
+                  }
+                }
+              };
+              </script>
+---
+
+
+## Indeterminate Forms
+
+*   $\frac{0}{0}$
+
+*   $\frac{\infty}{\infty}$
+
+*   $0\cdot \infty$
+
+*   $\infty - \infty$
+
+*   $0^0$
+
+*   $\infty^0$
+
+*   $1^\infty$
+
+
+## l'Hospital's Rule {.smaller}
+
+If $\displaystyle\lim_{x\to a}f(x) = \lim_{x\to a}g(x) = 0$ and if
+$$\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+exists, then
+$$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
+
+. . .
+
+The same rule works if 
+$\displaystyle\lim_{x\to a}f(x)$ and $\lim_{x\to a}g(x) = 0$ are both infinite.
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+x
+\ln x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}
+x
+\exp x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+-\infty
+}
+x
+\exp x
+$
+
+---
+
+$\displaystyle \lim_{x \to
+{\frac{\pi}{2}}^-
+}
+\left(\sec x - \tan x\right)
+$
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+x^{\sin x}
+$
+
+---
+
+$\displaystyle \lim_{x \to
+\infty
+}
+x^{1/x}
+$
+
+---
+
+$\displaystyle \lim_{x \to
+0^+
+}
+(\cos x)^{1/x^2}
+$
+
+## Integration by Parts
+
+Given: two functions, _differentiable_ on an interval $(a,b)$, continuous on
+$[a,b]$.
+
+---
+
+:::{height="75%"}
+```{=html}
+{{< include by_parts.svg >}}
+```
+:::
+
+---
+
+$${\color{blue}\int_a^b g(x)f'(x)\;dx} + {\color{red}\int_a^b f(x)g'(x)\;dx} + {\color{green}f(a)g(a)} = f(b)g(b)$$
+
+. . .
+
+$$ {\color{red}\int_a^b f(x)g'(x)\;dx} = f(b)g(b) - {\color{green}f(a)g(a)} - {\color{blue}\int_a^b g(x)f'(x)\;dx}$$
+
+. . .
+
+$$ \int_a^b f(x)g'(x)\;dx = \Biggl.\left(f(x)g(x)\right)\Biggr\rvert_a^b - \int_a^b g(x)f'(x)\;dx$$
+
+## Integration by Parts {.smaller}
+
+Let $f$ and $g$ be two functions continuous on $[a,b]$ and differentiable on
+$(a,b)$.  Then
+
+$$\int_a^b f(x)g'(x)\;dx = \Biggl.\left(f(x)g(x)\right)\Biggr\rvert_a^b - \int_a^b g(x)f'(x)\;dx$$
+
+. . .
+
+This could be useful if $f'(x)$ is _simpler_ than $f(x)$ and/or $g(x)$ is
+_simpler_ than $g'(x)$.
+
+---
+
+$\displaystyle \int_0^1 x\exp(x)\;dx$
+
+---
+
+$\displaystyle \int_1^2 x\ln x\;dx$
+
+---
+
+$\displaystyle \int_0^{1} \arctan x\;dx$
+
+## Antiderivative Version
+
+$$\int f(x)g'(x)\;dx = f(x)g(x) - \int g(x)f'(x)\;dx$$
+
+. . .
+
+Connection to _product rule_:
+
+$$\phantom{\int} f'(x)g(x)\phantom{\;dx} + \phantom{\int} f(x)g'(x)\phantom{\;dx} = \phantom{\int}\left(f(x)g(x)\right)'\phantom{\;dx}$$
+
+---
+
+$\displaystyle \int \ln x\;dx$
+
+---
+
+$\displaystyle \int x^2\cos x\;dx$
+
+---
+
+$\displaystyle \int \cos x \exp(x)\;dx$
+
